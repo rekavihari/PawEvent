@@ -1,0 +1,33 @@
+PODS:
+  - MessageInputBar (0.4.1):
+    - MessageInputBar/Core (= 0.4.1)
+  - MessageInputBar/Core (0.4.1)
+  - MessageKit (2.0.0-beta.1):
+    - MessageInputBar/Core
+  - SwiftLint (0.27.0)
+
+DEPENDENCIES:
+  - MessageInputBar (from `https://github.com/MessageKit/MessageInputBar.git`, branch `master`)
+  - MessageKit (from `../MessageKit`)
+  - SwiftLint
+
+EXTERNAL SOURCES:
+  MessageInputBar:
+    :branch: master
+    :git: https://github.com/MessageKit/MessageInputBar.git
+  MessageKit:
+    :path: ../MessageKit
+
+CHECKOUT OPTIONS:
+  MessageInputBar:
+    :commit: faebe27f2dd8f39ea145e75b7296ef48133c099a
+    :git: https://github.com/MessageKit/MessageInputBar.git
+
+SPEC CHECKSUMS:
+  MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
+  MessageKit: 70df25cf11d8f2191fbf8e77a9d80b35e80d359d
+  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
+
+PODFILE CHECKSUM: 3e071447a7e9dffaeda1f63835392ae47ec4cedf
+
+COCOAPODS: 1.4.0
