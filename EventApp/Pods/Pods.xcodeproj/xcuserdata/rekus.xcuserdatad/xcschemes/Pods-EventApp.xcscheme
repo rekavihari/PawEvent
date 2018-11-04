@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "553DB3A56C65608392A7CA3F88DEE290"
+               BlueprintIdentifier = "8F729D74236751F80021A309C1B534B5"
                BuildableName = "Pods_EventApp.framework"
                BlueprintName = "Pods-EventApp"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "553DB3A56C65608392A7CA3F88DEE290"
+            BlueprintIdentifier = "8F729D74236751F80021A309C1B534B5"
             BuildableName = "Pods_EventApp.framework"
             BlueprintName = "Pods-EventApp"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -15,7 +15,23 @@ class ContactViewController: UIViewController, UITableViewDelegate, UITableViewD
     let phoneValues = ["06 30 645 86 68","06 20 985 37 56","06 70 345 26 35"]
     let emailValues = ["tcsg.toth@gmail.com","info@bikemylake.hu","zele.bence@gmail.com"]
 
+    @IBAction func callTapped(_ sender: Any) {
+        let phoneNumber = 0036302571405
+        if let url = URL(string: "tel://\(phoneNumber)") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
     
+    @IBAction func emailTapped(_ sender: Any) {
+        let email = "info@bikemylake.hu"
+        if let url = URL(string: "mailto:\(email)") {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactcell") as! ContactTableViewCell
@@ -25,9 +41,11 @@ class ContactViewController: UIViewController, UITableViewDelegate, UITableViewD
         maskLayer.path = UIBezierPath(roundedRect: CGRect(x: 6, y: 6, width: bounds.width-9, height: bounds.height-9), cornerRadius: 10).cgPath
         cell.layer.mask = maskLayer
 
+       
+
         cell.nameLabel.text = nameValues[indexPath.row]
-        cell.phoneLabel.text = phoneValues[indexPath.row]
-        cell.emailLabel.text = emailValues[indexPath.row]
+        cell.phoneLabel.setTitle(phoneValues[indexPath.row],for: .normal)
+        cell.emailLabel.setTitle(emailValues[indexPath.row],for: .normal)
 
         /*let viewHeight: CGFloat = view.frame.size.height
          let tableViewContentHeight: CGFloat = tableView.contentSize.height

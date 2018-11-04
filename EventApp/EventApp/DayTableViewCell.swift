@@ -14,5 +14,18 @@ class DayTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
 
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var containerViewTopLayoutConstraint: NSLayoutConstraint!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        containerView.layer.cornerRadius = 6;
+        containerView.layer.masksToBounds = true;
+    }
+
+    func setTopConstraint(to value: Bool) {
+        containerViewTopLayoutConstraint.constant = value == true ? 6 : 0
+    }
 
 }

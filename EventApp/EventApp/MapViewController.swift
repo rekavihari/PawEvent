@@ -73,9 +73,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     func paint() {
 
-        let sourceCord = locationManager.location?.coordinate
+        guard let sourceCord = locationManager.location?.coordinate, CLLocationCoordinate2DIsValid(sourceCord) else{
+            print("Forrás koordináta üres!")
+            return
+        }
+
         let destCord = CLLocationCoordinate2D (latitude: 46.7580642, longitude: 17.253708)
-        let sourcePlaceMark = MKPlacemark (coordinate: (sourceCord ?? nil)!)
+
+        let sourcePlaceMark = MKPlacemark (coordinate: sourceCord)
         let destPlaceMark = MKPlacemark (coordinate: destCord)
 
         let sourceItem = MKMapItem (placemark: sourcePlaceMark)

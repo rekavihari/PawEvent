@@ -21,13 +21,16 @@ class DaysViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         let maskLayer = CAShapeLayer()
         let bounds = cell.bounds
+
         maskLayer.path = UIBezierPath(roundedRect: CGRect(x: 6, y: 6, width: bounds.width-9, height: bounds.height-9), cornerRadius: 10).cgPath
-        cell.layer.mask = maskLayer
+
+        // cell.layer.mask = maskLayer
 
         cell.titleLabel.text = dayValues[indexPath.row]
         cell.timeLabel.text = dateValues[indexPath.row]
         cell.descriptionLabel.text = descriptionValues[indexPath.row]
 
+        cell.setTopConstraint(to: indexPath.row == 0)
 
         /*let viewHeight: CGFloat = view.frame.size.height
         let tableViewContentHeight: CGFloat = tableView.contentSize.height
@@ -60,11 +63,6 @@ class DaysViewController: UIViewController, UITableViewDelegate, UITableViewData
 
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "daycell") as! DayTableViewCell
-        let maskLayer = CAShapeLayer()
-        let bounds = cell.bounds
-        maskLayer.path = UIBezierPath(roundedRect: CGRect(x: 6, y: 6, width: bounds.width-9, height: bounds.height-9), cornerRadius: 10).cgPath
-        cell.layer.mask = maskLayer
 
 
 

@@ -7,10 +7,16 @@
 //
 
 import UIKit
+import FSCalendar
 
-class ProgramViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ProgramViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, FSCalendarDataSource, FSCalendarDelegate, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
+
+    @IBOutlet weak var dayView: FSCalendar!
+
+    @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
+
 
     let timeValues = ["08:30 - 09:30", "10:00", "10:10", "11:30 - 12:30", "13:00 - 13:30", "15:00 - 16:00", "16:00 - 20:00", "20:00 - 21:00","21:00 - 22:00" ]
     let indexes = ["1","2","3","4","5","6","7","8","9"]
@@ -20,11 +26,86 @@ class ProgramViewController: UIViewController, UICollectionViewDelegate, UIColle
     let titleValues = ["Reggeli", "Indulás Paloznakról", "Sportfröccs", "Tihanyi templomdomb", "Sörözés Aszófőn","Érkezés Zánkára","Strand","Vacsora","Kvízest"]
 
 
+
+
+    fileprivate lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        return formatter
+    }()
+    fileprivate lazy var scopeGesture: UIPanGestureRecognizer = {
+        [unowned self] in
+        let panGesture = UIPanGestureRecognizer(target: self.dayView, action: #selector(self.dayView.handleScopeGesture(_:)))
+        panGesture.delegate = self
+        panGesture.minimumNumberOfTouches = 1
+        panGesture.maximumNumberOfTouches = 2
+        return panGesture
+        }()
+
     override func viewDidLoad() {
+
+        super.viewDidLoad()
+
+        if UIDevice.current.model.hasPrefix("iPad") {
+            self.calendarHeightConstraint.constant = 400
+        }
+
+        self.dayView.select(Date())
+
+        self.view.addGestureRecognizer(self.scopeGesture)
+        self.collectionView.panGestureRecognizer.require(toFail: self.scopeGesture)
+        self.dayView.scope = .week
+
+        // For UITest
+        self.dayView.accessibilityIdentifier = "calendar"
+
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Ma", style: .done, target: self, action: #selector(addTapped))
 
 
     }
+    @objc func addTapped(sender: AnyObject) {
+        self.dayView.select(Date())
+        guard let dateNow = dayView.selectedDate else{
+            return
+        }
+        print("did select date \(dateFormatter.string(from: dateNow))")
+    }
 
+    deinit {
+        print("\(#function)")
+    }
+
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        let shouldBegin = self.collectionView.contentOffset.y <= -self.collectionView.contentInset.top
+        if shouldBegin {
+            let velocity = self.scopeGesture.velocity(in: self.view)
+            switch self.dayView.scope {
+            case .month:
+                return velocity.y < 0
+            case .week:
+                return velocity.y > 0
+            }
+        }
+        return shouldBegin
+    }
+
+    func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
+        self.calendarHeightConstraint.constant = bounds.height
+        self.view.layoutIfNeeded()
+    }
+
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        print("did select date \(self.dateFormatter.string(from: date))")
+        let selectedDates = calendar.selectedDates.map({self.dateFormatter.string(from: $0)})
+        print("selected dates is \(selectedDates)")
+        if monthPosition == .next || monthPosition == .previous {
+            calendar.setCurrentPage(date, animated: true)
+        }
+    }
+
+    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
+        print("\(self.dateFormatter.string(from: calendar.currentPage))")
+    }
 
 
 

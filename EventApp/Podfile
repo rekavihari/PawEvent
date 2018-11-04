@@ -6,11 +6,10 @@ target 'EventApp' do
   use_frameworks!
 
   # Pods for EventApp
-  pod 'SwiftLint'
+  #pod 'SwiftLint'
 
   pod 'MessageKit', :path => '../MessageKit'
   pod 'MessageInputBar', :git => 'https://github.com/MessageKit/MessageInputBar.git', :branch => 'master'
-
-
+  pod 'FSCalendar'
 
 end

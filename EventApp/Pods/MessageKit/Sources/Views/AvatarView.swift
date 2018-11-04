@@ -26,6 +26,7 @@ import Foundation
 
 open class AvatarView: UIImageView {
 
+    
     // MARK: - Properties
     
     open var initials: String? {

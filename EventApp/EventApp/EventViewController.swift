@@ -17,7 +17,9 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: "eventcell") as! EventTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "eventcell") as? EventTableViewCell else {
+            return UITableViewCell()
+        }
 
         let maskLayer = CAShapeLayer()
         let bounds = cell.bounds
