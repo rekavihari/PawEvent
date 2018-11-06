@@ -23,6 +23,8 @@ final class MessageKitViewController: ChatViewController {
         messagesCollectionView.register(CustomCell.self)
         super.viewDidLoad()
 
+        messagesCollectionView.isPrefetchingEnabled = true
+
         updateTitleView(title: "Üzenetek", subtitle: "Bike my lake csoport")
 
         // Customize the typing bubble! These are the default values

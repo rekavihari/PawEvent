@@ -37,6 +37,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             locationManager.startUpdatingLocation()
         }
 
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Új", style: .done, target: self, action: #selector(clearTapped))
+
 
 
         let initialLocation = CLLocation(latitude: 46.761517, longitude: 17.2534798)
@@ -58,11 +60,36 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
 
 
-
+        self.view.addSubview(mapView)
 
 
 
     }
+
+    @objc func clearTapped(sender: AnyObject) {
+        let overlays = mapView.overlays
+        mapView.removeOverlays(overlays)
+    }
+    //memória csökk
+   /* override func viewWillDisappear(_ animated:Bool) {
+        super.viewWillDisappear(animated)
+        self.applyMapViewMemoryLeakFix()
+    }
+
+
+    func applyMapViewMemoryLeakFix() {
+        switch mapView.mapType {
+        case .standard, .mutedStandard:
+            mapView.mapType = .satellite
+        default:
+            mapView.mapType = .standard
+        }
+        mapView.showsUserLocation = false
+        mapView.delegate = nil
+        mapView.removeFromSuperview()
+        mapView = nil
+    }
+ */
 
     func mapView (_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
@@ -111,6 +138,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             self.mapView.setRegion(MKCoordinateRegion(rekt), animated: true)
         })
     }
+
+
 
     let regionRadius: CLLocationDistance = 1800
     func centerMapOnLocation(location: CLLocation) {

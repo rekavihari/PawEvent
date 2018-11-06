@@ -25,8 +25,7 @@ class ProgramViewController: UIViewController, UICollectionViewDelegate, UIColle
     let descriptionValues = ["Közös reggeli - kontinentális menü", "Az első kilométerek megtétele", "Guruljon az élet", "Feltekerés a Tihanyi apátsághoz, amely a domb tetején található","Nagyi Kertje Teázó","Szállások elfoglalása","Lángos, röpi, vizibicikli, sör, fröccs, stb","Grillezés (csirkemell, kolbászok, zöldségek)","Fergeteges hangulattal és remek társasággal"]
     let titleValues = ["Reggeli", "Indulás Paloznakról", "Sportfröccs", "Tihanyi templomdomb", "Sörözés Aszófőn","Érkezés Zánkára","Strand","Vacsora","Kvízest"]
 
-
-
+    let descriptionValuesUj = ["kkkkk reggeli - kontinentális menü", "Az első kilométerek megtétele", "Guruljon az élet", "Feltekerés a Tihanyi apátsághoz, amely a domb tetején található","Nagyi Kertje Teázó","Szállások elfoglalása","Lángos, röpi, vizibicikli, sör, fröccs, stb","Grillezés (csirkemell, kolbászok, zöldségek)","Fergeteges hangulattal és remek társasággal"]
 
     fileprivate lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -46,12 +45,15 @@ class ProgramViewController: UIViewController, UICollectionViewDelegate, UIColle
 
         super.viewDidLoad()
 
+        self.collectionView?.isPrefetchingEnabled = true
+
+        self.dayView.locale = Locale(identifier: "hu")
         if UIDevice.current.model.hasPrefix("iPad") {
             self.calendarHeightConstraint.constant = 400
         }
 
         self.dayView.select(Date())
-
+        
         self.view.addGestureRecognizer(self.scopeGesture)
         self.collectionView.panGestureRecognizer.require(toFail: self.scopeGesture)
         self.dayView.scope = .week
@@ -95,12 +97,16 @@ class ProgramViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
 
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        collectionView.reloadData()
         print("did select date \(self.dateFormatter.string(from: date))")
         let selectedDates = calendar.selectedDates.map({self.dateFormatter.string(from: $0)})
         print("selected dates is \(selectedDates)")
         if monthPosition == .next || monthPosition == .previous {
             calendar.setCurrentPage(date, animated: true)
         }
+
+
+
     }
 
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
@@ -118,8 +124,29 @@ class ProgramViewController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "programcell", for: indexPath) as! ProgramCollectionViewCell
 
+
+        guard let dateNow = dayView.selectedDate else {
+            return cell
+        }
+        var dateComponents = DateComponents()
+        dateComponents.year = 2018
+        dateComponents.month = 11
+        dateComponents.day = 8
+        let userCalendar = Calendar.current // user calendar
+        let someDateTime = userCalendar.date(from: dateComponents)
+
+        guard let compareDate = someDateTime else {
+            return cell
+        }
+        if dateNow.compare(compareDate).rawValue == 0 {
+            cell.descriptionLabel.text = descriptionValues[indexPath.row]
+            print("ok")
+        } else {
+            cell.descriptionLabel.text = descriptionValuesUj[indexPath.row]
+            print("nemok")
+        }
+
         cell.imageURL.image = imageValues[indexPath.row]
-        cell.descriptionLabel.text = descriptionValues[indexPath.row]
         cell.titleLabel.text = titleValues[indexPath.row]
         cell.timeLabel.text = timeValues[indexPath.row]
 
