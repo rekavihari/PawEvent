@@ -105,6 +105,124 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		923B70D8219430EB0061F471 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				923B70E1219433060061F471 /* Competition */,
+				923B70E22194332C0061F471 /* Program */,
+				923B70DE219432A40061F471 /* Contact */,
+				923B70DD219432910061F471 /* UI */,
+				923B70DC219432790061F471 /* Login */,
+				923B70DB219431060061F471 /* Home */,
+				923B70DA219431000061F471 /* Location */,
+				923B70D9219430F50061F471 /* Messages */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		923B70D9219430F50061F471 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				92C9E2F82184DC7A006642D6 /* ChatViewController.swift */,
+				924B66842184D96500701E02 /* MessageKitViewController.swift */,
+				927308DD21666C9C001F4DC6 /* MessageViewController.swift */,
+				928513E5216B477300812F4B /* MessageTableViewCell.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		923B70DA219431000061F471 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				927308E9216682A9001F4DC6 /* Artwork.swift */,
+				92F3414D21669B9800B486F2 /* mm.swift */,
+				927308D72166654D001F4DC6 /* MapViewController.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		923B70DB219431060061F471 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				927308D521665772001F4DC6 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		923B70DC219432790061F471 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				927308D121664807001F4DC6 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		923B70DD219432910061F471 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				927308D321664DB1001F4DC6 /* MainTabBarController.swift */,
+				927308C0216647E6001F4DC6 /* Main.storyboard */,
+				927308C8216647E9001F4DC6 /* LaunchScreen.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		923B70DE219432A40061F471 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				927308DB21666C7B001F4DC6 /* ContactViewController.swift */,
+				928513E32168FD2D00812F4B /* ContactTableViewCell.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		923B70DF219432C70061F471 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				927308BC216647E6001F4DC6 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		923B70E0219432F10061F471 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				927308C6216647E9001F4DC6 /* Assets.xcassets */,
+				927308CB216647E9001F4DC6 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		923B70E1219433060061F471 /* Competition */ = {
+			isa = PBXGroup;
+			children = (
+				927308DF21666CAE001F4DC6 /* CompetitionViewController.swift */,
+			);
+			path = Competition;
+			sourceTree = "<group>";
+		};
+		923B70E22194332C0061F471 /* Program */ = {
+			isa = PBXGroup;
+			children = (
+				927308E321666CFC001F4DC6 /* ProgramViewController.swift */,
+				927308E521666D2F001F4DC6 /* ProgramCollectionViewCell.swift */,
+			);
+			path = Program;
+			sourceTree = "<group>";
+		};
+		923B70E4219433B50061F471 /* Declined */ = {
+			isa = PBXGroup;
+			children = (
+				927308E72166773B001F4DC6 /* DayTableViewCell.swift */,
+				928513E7216BA1EE00812F4B /* EventViewController.swift */,
+				928513E9216BA20000812F4B /* EventTableViewCell.swift */,
+				928513EB216CB0FF00812F4B /* EventCollectionViewCell.swift */,
+				928513EF216CB15500812F4B /* EventsViewController.swift */,
+				927308E121666CD9001F4DC6 /* DaysViewController.swift */,
+			);
+			path = Declined;
+			sourceTree = "<group>";
+		};
 		927308B0216647E6001F4DC6 = {
 			isa = PBXGroup;
 			children = (
@@ -126,35 +244,13 @@
 		927308BB216647E6001F4DC6 /* EventApp */ = {
 			isa = PBXGroup;
 			children = (
+				923B70E0219432F10061F471 /* Resources */,
+				923B70DF219432C70061F471 /* Application */,
+				923B70D8219430EB0061F471 /* Features */,
 				92C9E2FF2184DD42006642D6 /* Data Generation */,
 				92C9E2FA2184DCE1006642D6 /* Models */,
-				927308BC216647E6001F4DC6 /* AppDelegate.swift */,
-				927308C0216647E6001F4DC6 /* Main.storyboard */,
-				927308C6216647E9001F4DC6 /* Assets.xcassets */,
-				927308C8216647E9001F4DC6 /* LaunchScreen.storyboard */,
-				927308CB216647E9001F4DC6 /* Info.plist */,
 				927308C3216647E6001F4DC6 /* EventApp.xcdatamodeld */,
-				927308D121664807001F4DC6 /* LoginViewController.swift */,
-				927308D321664DB1001F4DC6 /* MainTabBarController.swift */,
-				924B66842184D96500701E02 /* MessageKitViewController.swift */,
-				927308D521665772001F4DC6 /* HomeViewController.swift */,
-				927308DB21666C7B001F4DC6 /* ContactViewController.swift */,
-				928513E32168FD2D00812F4B /* ContactTableViewCell.swift */,
-				927308DD21666C9C001F4DC6 /* MessageViewController.swift */,
-				928513E5216B477300812F4B /* MessageTableViewCell.swift */,
-				927308DF21666CAE001F4DC6 /* CompetitionViewController.swift */,
-				927308E121666CD9001F4DC6 /* DaysViewController.swift */,
-				927308E72166773B001F4DC6 /* DayTableViewCell.swift */,
-				927308E321666CFC001F4DC6 /* ProgramViewController.swift */,
-				927308E521666D2F001F4DC6 /* ProgramCollectionViewCell.swift */,
-				927308E9216682A9001F4DC6 /* Artwork.swift */,
-				927308D72166654D001F4DC6 /* MapViewController.swift */,
-				92F3414D21669B9800B486F2 /* mm.swift */,
-				928513E7216BA1EE00812F4B /* EventViewController.swift */,
-				928513E9216BA20000812F4B /* EventTableViewCell.swift */,
-				928513EF216CB15500812F4B /* EventsViewController.swift */,
-				928513EB216CB0FF00812F4B /* EventCollectionViewCell.swift */,
-				92C9E2F82184DC7A006642D6 /* ChatViewController.swift */,
+				923B70E4219433B50061F471 /* Declined */,
 			);
 			path = EventApp;
 			sourceTree = "<group>";
@@ -328,7 +424,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\n\n";
+			shellScript = "
+
+";
 		};
 		946706DAC2761C23ED1FEE03 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
