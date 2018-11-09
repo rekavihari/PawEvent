@@ -11,5 +11,7 @@ target 'EventApp' do
   pod 'MessageKit', :path => '../MessageKit'
   pod 'MessageInputBar', :git => 'https://github.com/MessageKit/MessageInputBar.git', :branch => 'master'
   pod 'FSCalendar'
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
 
 end

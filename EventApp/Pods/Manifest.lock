@@ -1,15 +1,19 @@
 PODS:
+  - Alamofire (4.7.3)
   - FSCalendar (2.8.0)
   - MessageInputBar (0.4.1):
     - MessageInputBar/Core (= 0.4.1)
   - MessageInputBar/Core (0.4.1)
   - MessageKit (2.0.0-beta.1):
     - MessageInputBar/Core
+  - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
+  - Alamofire
   - FSCalendar
   - MessageInputBar (from `https://github.com/MessageKit/MessageInputBar.git`, branch `master`)
   - MessageKit (from `../MessageKit`)
+  - SwiftyJSON
 
 EXTERNAL SOURCES:
   MessageInputBar:
@@ -24,10 +28,12 @@ CHECKOUT OPTIONS:
     :git: https://github.com/MessageKit/MessageInputBar.git
 
 SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
   MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
   MessageKit: 70df25cf11d8f2191fbf8e77a9d80b35e80d359d
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 52e6f1f1a721f500a28dd21bae79b0119480f85b
+PODFILE CHECKSUM: fbccc95285f28b65292fc1ae389cf96848a4245e
 
 COCOAPODS: 1.4.0

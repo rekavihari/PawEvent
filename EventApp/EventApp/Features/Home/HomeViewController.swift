@@ -13,6 +13,26 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let jsonURLString = "http://localhost:8080/api/events"
+        guard let url = URL(string: jsonURLString) else {
+            return
+        }
+        URLSession.shared.dataTask(with: url) { (data, response, err) in
+
+            guard let data = data else {
+                return
+            }
+
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+                print(json)
+            } catch let jsonErr {
+                print("Error seralizing json:", jsonErr)
+            }
+
+
+        }.resume()
+
     }
     
   
