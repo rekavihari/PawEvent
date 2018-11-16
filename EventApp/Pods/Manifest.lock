@@ -6,6 +6,7 @@ PODS:
   - MessageInputBar/Core (0.4.1)
   - MessageKit (2.0.0-beta.1):
     - MessageInputBar/Core
+  - SwiftKeychainWrapper (3.0.1)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - FSCalendar
   - MessageInputBar (from `https://github.com/MessageKit/MessageInputBar.git`, branch `master`)
   - MessageKit (from `../MessageKit`)
+  - SwiftKeychainWrapper
   - SwiftyJSON
 
 EXTERNAL SOURCES:
@@ -32,8 +34,9 @@ SPEC CHECKSUMS:
   FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
   MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
   MessageKit: 70df25cf11d8f2191fbf8e77a9d80b35e80d359d
+  SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: fbccc95285f28b65292fc1ae389cf96848a4245e
+PODFILE CHECKSUM: 0e0df8a411d191d1a8b412005c56591a8d37e77a
 
 COCOAPODS: 1.4.0

@@ -264,32 +264,32 @@
                                 <rect key="frame" x="10" y="74" width="355" height="544"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35T-pG-geN">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="97.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="101"/>
                                         <string key="text">A túra során mindenkinek lehetősége lesz egy átfogó pontgyűjtő versenyben való részvételre. Az összesített ranglista első három helyezettjét értékes ajándékokkal jutamazzuk.                      </string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eredményhirdetés:    " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOf-iU-VNQ">
-                                        <rect key="frame" x="0.0" y="107.5" width="355" height="20"/>
+                                        <rect key="frame" x="0.0" y="111" width="355" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keszthely, 2018. július 28. 21:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n09-gm-FCJ">
-                                        <rect key="frame" x="0.0" y="137.5" width="355" height="19.5"/>
+                                        <rect key="frame" x="0.0" y="141.5" width="355" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pontszerzési lehetőségek:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8Z-0E-k4h">
-                                        <rect key="frame" x="0.0" y="167" width="355" height="20"/>
+                                        <rect key="frame" x="0.0" y="172" width="355" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3TC-Vo-hhe">
-                                        <rect key="frame" x="0.0" y="197" width="355" height="347"/>
+                                        <rect key="frame" x="0.0" y="202.5" width="355" height="341.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gb5-Yi-B5e">
@@ -427,7 +427,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HcO-v0-07P" customClass="FSCalendar">
-                                <rect key="frame" x="0.0" y="64" width="375" height="300"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="300"/>
                                 <color key="backgroundColor" red="0.84705882352941175" green="0.94509803921568625" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -445,7 +445,7 @@
                                 </connections>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hr8-w6-6QJ">
-                                <rect key="frame" x="5" y="374" width="365" height="253"/>
+                                <rect key="frame" x="10" y="330" width="360" height="297"/>
                                 <color key="backgroundColor" red="0.49803921569999998" green="0.77647058820000003" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Fqg-6y-OXh">
                                     <size key="itemSize" width="357" height="253"/>
@@ -455,7 +455,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="programcell" id="eA5-Tl-goc" customClass="ProgramCollectionViewCell" customModule="EventApp" customModuleProvider="target">
-                                        <rect key="frame" x="4" y="0.0" width="357" height="253"/>
+                                        <rect key="frame" x="1.5" y="0.0" width="357" height="253"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="357" height="253"/>
@@ -465,7 +465,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="357" height="119.5"/>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9aM-Ne-ha2">
-                                                    <rect key="frame" x="10" y="129.5" width="337" height="113.5"/>
+                                                    <rect key="frame" x="8" y="129.5" width="349" height="113.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="171" translatesAutoresizingMaskIntoConstraints="NO" id="MI1-va-GzD">
                                                             <rect key="frame" x="0.0" y="0.0" width="313" height="50"/>
@@ -492,13 +492,13 @@
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.84705882349999995" green="0.94509803920000002" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </stackView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vacsora" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14D-8b-ZfO">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vacsora" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14D-8b-ZfO">
                                                             <rect key="frame" x="0.0" y="60" width="73.5" height="23"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hamburger és grill ételek" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXY-UX-gC5">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hamburger és grill ételek" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MXY-UX-gC5">
                                                             <rect key="frame" x="0.0" y="93" width="191.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -513,9 +513,9 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="ETW-ky-0pj" secondAttribute="trailing" id="80j-dL-C0N"/>
                                             <constraint firstItem="9aM-Ne-ha2" firstAttribute="top" secondItem="ETW-ky-0pj" secondAttribute="bottom" constant="10" id="ARA-vg-AK6"/>
+                                            <constraint firstItem="9aM-Ne-ha2" firstAttribute="leading" secondItem="eA5-Tl-goc" secondAttribute="leadingMargin" id="Gm3-GJ-5Is"/>
                                             <constraint firstAttribute="bottom" secondItem="9aM-Ne-ha2" secondAttribute="bottom" constant="10" id="YgX-fO-Boy"/>
-                                            <constraint firstAttribute="trailing" secondItem="9aM-Ne-ha2" secondAttribute="trailing" constant="10" id="bE0-hP-gF9"/>
-                                            <constraint firstItem="9aM-Ne-ha2" firstAttribute="leading" secondItem="eA5-Tl-goc" secondAttribute="leading" constant="10" id="eHD-rY-4rj"/>
+                                            <constraint firstAttribute="trailing" secondItem="9aM-Ne-ha2" secondAttribute="trailing" id="bE0-hP-gF9"/>
                                             <constraint firstItem="ETW-ky-0pj" firstAttribute="leading" secondItem="eA5-Tl-goc" secondAttribute="leading" id="eWj-8b-lfJ"/>
                                             <constraint firstItem="ETW-ky-0pj" firstAttribute="top" secondItem="eA5-Tl-goc" secondAttribute="top" id="iYI-aI-w34"/>
                                         </constraints>
@@ -536,11 +536,11 @@
                         <color key="backgroundColor" red="0.49803921569999998" green="0.77647058820000003" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="hr8-w6-6QJ" secondAttribute="bottom" constant="40" id="4EI-gz-J3l"/>
+                            <constraint firstItem="hr8-w6-6QJ" firstAttribute="leading" secondItem="9h2-km-lgj" secondAttribute="leading" constant="10" id="Ncf-IF-aFm"/>
                             <constraint firstAttribute="trailing" secondItem="hr8-w6-6QJ" secondAttribute="trailing" constant="5" id="Vu3-gK-kIx"/>
                             <constraint firstItem="hr8-w6-6QJ" firstAttribute="top" secondItem="HcO-v0-07P" secondAttribute="bottom" constant="10" id="ZKC-ac-gDA"/>
                             <constraint firstItem="HcO-v0-07P" firstAttribute="top" secondItem="sjW-Z4-n5H" secondAttribute="top" id="Zim-f5-8il"/>
                             <constraint firstItem="sjW-Z4-n5H" firstAttribute="trailing" secondItem="HcO-v0-07P" secondAttribute="trailing" id="lR0-iy-sEQ"/>
-                            <constraint firstItem="hr8-w6-6QJ" firstAttribute="leading" secondItem="9h2-km-lgj" secondAttribute="leading" constant="5" id="v8x-kG-8IV"/>
                             <constraint firstItem="HcO-v0-07P" firstAttribute="leading" secondItem="sjW-Z4-n5H" secondAttribute="leading" id="yNi-s5-waI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sjW-Z4-n5H"/>
@@ -559,13 +559,13 @@
         <!--Bike my lake-->
         <scene sceneID="cEs-SD-QT2">
             <objects>
-                <viewController id="qbb-nr-dbb" customClass="HomeViewController" customModule="EventApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qbb-nr-dbb" customClass="HomeViewController" customModule="EventApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="09p-dI-4Ga">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvc-pk-xfi">
-                                <rect key="frame" x="330" y="80" width="35" height="35"/>
+                                <rect key="frame" x="330" y="40" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="UUb-zR-MWb"/>
                                     <constraint firstAttribute="height" constant="35" id="bsw-q6-ILK"/>
@@ -587,31 +587,42 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="n6U-vR-50S">
-                                        <rect key="frame" x="53" y="260" width="229" height="200"/>
+                                        <rect key="frame" x="0.0" y="260" width="335" height="200"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bike my lake" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5i-OJ-zff">
-                                                <rect key="frame" x="0.0" y="0.0" width="229" height="41.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="48"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="qfA-pP-orj">
-                                                <rect key="frame" x="0.0" y="101.5" width="229" height="98.5"/>
+                                                <rect key="frame" x="0.0" y="108" width="335" height="92"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019.07.18.-07.23." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p39-mB-1k7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="229" height="19"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHV-sv-54r">
-                                                        <rect key="frame" x="0.0" y="19" width="229" height="39.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="iIZ-J8-8Vn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="24"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="startDate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p39-mB-1k7">
+                                                                <rect key="frame" x="0.0" y="0.0" width="165" height="24"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJW-R0-f6z">
+                                                                <rect key="frame" x="165" y="0.0" width="18.5" height="24"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="endDate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHV-sv-54r">
+                                                                <rect key="frame" x="183.5" y="0.0" width="151.5" height="24"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYL-4u-c7G">
-                                                        <rect key="frame" x="0.0" y="58.5" width="229" height="40"/>
+                                                        <rect key="frame" x="0.0" y="24" width="335" height="68"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -625,20 +636,37 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bva-1p-Rse">
+                                <rect key="frame" x="10" y="40" width="95" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Kijelentkezés">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutTapped:" destination="qbb-nr-dbb" eventType="touchUpInside" id="S87-u8-tFh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.49803921568627452" green="0.77647058823529413" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="jvc-pk-xfi" firstAttribute="top" secondItem="09p-dI-4Ga" secondAttribute="top" constant="80" id="7yQ-W1-Ilq"/>
+                            <constraint firstItem="jvc-pk-xfi" firstAttribute="top" secondItem="09p-dI-4Ga" secondAttribute="top" constant="40" id="7yQ-W1-Ilq"/>
                             <constraint firstItem="oWT-ei-ib1" firstAttribute="trailing" secondItem="RY2-ag-UyH" secondAttribute="trailing" constant="20" id="IUR-oM-6dv"/>
+                            <constraint firstItem="Bva-1p-Rse" firstAttribute="top" secondItem="09p-dI-4Ga" secondAttribute="top" constant="40" id="TR7-UA-xhD"/>
                             <constraint firstItem="RY2-ag-UyH" firstAttribute="top" secondItem="oWT-ei-ib1" secondAttribute="top" constant="90" id="e0Y-s6-Bgg"/>
                             <constraint firstItem="RY2-ag-UyH" firstAttribute="leading" secondItem="oWT-ei-ib1" secondAttribute="leading" constant="20" id="i0q-Al-Khj"/>
                             <constraint firstAttribute="trailing" secondItem="jvc-pk-xfi" secondAttribute="trailing" constant="10" id="pCj-bQ-uXS"/>
+                            <constraint firstItem="Bva-1p-Rse" firstAttribute="leading" secondItem="09p-dI-4Ga" secondAttribute="leading" constant="10" id="zqk-me-kPh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oWT-ei-ib1"/>
                     </view>
                     <navigationItem key="navigationItem" title="Bike my lake" id="AoB-ts-VgX">
                         <barButtonItem key="backBarButtonItem" title="Vissza" id="tOI-LV-5pt"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="endLabel" destination="CHV-sv-54r" id="5by-Ge-LaN"/>
+                        <outlet property="nameLabel" destination="T5i-OJ-zff" id="8mv-Ez-XaW"/>
+                        <outlet property="startLabel" destination="p39-mB-1k7" id="955-aK-jeh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vwB-QY-Pya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -653,7 +681,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="center" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S8E-GC-wmt">
-                                <rect key="frame" x="0.0" y="64" width="375" height="511"/>
+                                <rect key="frame" x="0.0" y="174" width="375" height="334"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="contactcell" rowHeight="113" id="WQK-Kz-yL2" customClass="ContactTableViewCell" customModule="EventApp" customModuleProvider="target">
@@ -718,26 +746,43 @@
                                     <outlet property="delegate" destination="Nd1-hu-aPl" id="rnH-ai-4wf"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leQ-HG-5yt">
-                                <rect key="frame" x="0.0" y="580" width="375" height="33"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <state key="normal" title="Adatvédelmi szabályzat">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kekimage" translatesAutoresizingMaskIntoConstraints="NO" id="lyw-8b-Uwj">
+                                <rect key="frame" x="0.0" y="508" width="375" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="fCw-Cn-68O"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kekimageford" translatesAutoresizingMaskIntoConstraints="NO" id="hIQ-96-h2d">
+                                <rect key="frame" x="0.0" y="64" width="375" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="1sz-OB-wRO"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWa-Ps-FGo">
+                                <rect key="frame" x="10" y="577" width="175" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Adatkezelési tájékoztató">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="IqH-q9-5TQ" kind="show" id="yz7-GU-BTX"/>
+                                    <segue destination="IqH-q9-5TQ" kind="show" id="f3F-NM-P8r"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.49803921569999998" green="0.77647058820000003" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="lOg-qQ-sfq" firstAttribute="bottom" secondItem="leQ-HG-5yt" secondAttribute="bottom" constant="5" id="99h-Ky-VAt"/>
-                            <constraint firstItem="leQ-HG-5yt" firstAttribute="top" secondItem="S8E-GC-wmt" secondAttribute="bottom" constant="5" id="FB2-Pa-h21"/>
-                            <constraint firstItem="leQ-HG-5yt" firstAttribute="leading" secondItem="lOg-qQ-sfq" secondAttribute="leading" id="KJC-4d-RwF"/>
-                            <constraint firstItem="lOg-qQ-sfq" firstAttribute="trailing" secondItem="leQ-HG-5yt" secondAttribute="trailing" id="Lsu-3o-uWX"/>
-                            <constraint firstItem="S8E-GC-wmt" firstAttribute="top" secondItem="lOg-qQ-sfq" secondAttribute="top" id="W1J-di-Lg0"/>
+                            <constraint firstItem="lOg-qQ-sfq" firstAttribute="bottom" secondItem="FWa-Ps-FGo" secondAttribute="bottom" constant="11" id="6q8-nc-ur8"/>
+                            <constraint firstItem="lyw-8b-Uwj" firstAttribute="bottom" secondItem="lOg-qQ-sfq" secondAttribute="bottom" id="Fd3-q0-NZl"/>
+                            <constraint firstAttribute="trailing" secondItem="lyw-8b-Uwj" secondAttribute="trailing" id="PAm-Mc-qvI"/>
+                            <constraint firstItem="lyw-8b-Uwj" firstAttribute="leading" secondItem="fLX-LO-Qth" secondAttribute="leading" id="Rnq-fw-wCZ"/>
+                            <constraint firstItem="hIQ-96-h2d" firstAttribute="leading" secondItem="fLX-LO-Qth" secondAttribute="leading" id="XAm-xi-SDZ"/>
+                            <constraint firstItem="FWa-Ps-FGo" firstAttribute="leading" secondItem="lOg-qQ-sfq" secondAttribute="leading" constant="10" id="XQT-5S-xe7"/>
+                            <constraint firstItem="S8E-GC-wmt" firstAttribute="top" secondItem="hIQ-96-h2d" secondAttribute="bottom" id="f3w-Ps-Vmy"/>
+                            <constraint firstAttribute="trailing" secondItem="hIQ-96-h2d" secondAttribute="trailing" id="hQF-XM-DJM"/>
                             <constraint firstItem="S8E-GC-wmt" firstAttribute="leading" secondItem="lOg-qQ-sfq" secondAttribute="leading" id="q4a-9d-Nim"/>
                             <constraint firstItem="S8E-GC-wmt" firstAttribute="trailing" secondItem="lOg-qQ-sfq" secondAttribute="trailing" id="qcQ-Iy-LrZ"/>
+                            <constraint firstItem="lyw-8b-Uwj" firstAttribute="top" secondItem="S8E-GC-wmt" secondAttribute="bottom" id="viB-A9-XDa"/>
+                            <constraint firstItem="hIQ-96-h2d" firstAttribute="top" secondItem="lOg-qQ-sfq" secondAttribute="top" id="xGK-Uy-lHc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lOg-qQ-sfq"/>
                     </view>
@@ -861,7 +906,7 @@ Bármikor kapcsolatba léphet az adatvédelmi tisztségviselővel, a fentie
         <!--Kezdőlap-->
         <scene sceneID="qBn-ew-SWt">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IsL-c7-jab" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="homeNaviVC" automaticallyAdjustsScrollViewInsets="NO" id="IsL-c7-jab" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Kezdőlap" image="home" id="Abf-HW-a1y"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lzE-T8-LIo">
@@ -937,11 +982,11 @@ Bármikor kapcsolatba léphet az adatvédelmi tisztségviselővel, a fentie
             </objects>
             <point key="canvasLocation" x="1103.2" y="5739.5802098950526"/>
         </scene>
-        <!--Verseny-->
+        <!--Leírás-->
         <scene sceneID="K0O-9U-mS6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nIf-WA-nAk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Verseny" image="champ" id="OUm-xg-sDO"/>
+                    <tabBarItem key="tabBarItem" title="Leírás" image="champ" id="OUm-xg-sDO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3UQ-2t-acm">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -995,7 +1040,7 @@ Bármikor kapcsolatba léphet az adatvédelmi tisztségviselővel, a fentie
         <!--Login View Controller-->
         <scene sceneID="boG-Q0-ziC">
             <objects>
-                <viewController id="CW9-nw-cEf" customClass="LoginViewController" customModule="EventApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" id="CW9-nw-cEf" customClass="LoginViewController" customModule="EventApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HyX-gx-VNn"/>
                         <viewControllerLayoutGuide type="bottom" id="gWO-sA-ePV"/>
@@ -1016,7 +1061,7 @@ Bármikor kapcsolatba léphet az adatvédelmi tisztségviselővel, a fentie
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8FX-n9-R5d" customClass="RoundedWhiteButton" customModule="FirebaseApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8FX-n9-R5d" customClass="RoundedWhiteButton" customModule="EventApp" customModuleProvider="target">
                                 <rect key="frame" x="24" y="499" width="327" height="64"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1030,7 +1075,7 @@ Bármikor kapcsolatba léphet az adatvédelmi tisztségviselővel, a fentie
                                     <segue destination="3fS-E6-BqS" kind="show" animates="NO" id="31W-FS-zyc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIT-FN-4N1" customClass="RoundedWhiteButton" customModule="FirebaseApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIT-FN-4N1" customClass="RoundedWhiteButton" customModule="EventApp" customModuleProvider="target">
                                 <rect key="frame" x="24" y="579" width="327" height="64"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1108,8 +1153,8 @@ Bármikor kapcsolatba léphet az adatvédelmi tisztségviselővel, a fentie
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZU5-DV-Eus">
-                                                        <rect key="frame" x="12" y="56" width="41" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FELHASZNÁLÓNÉV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZU5-DV-Eus">
+                                                        <rect key="frame" x="12" y="56" width="127" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -1146,7 +1191,7 @@ Bármikor kapcsolatba léphet az adatvédelmi tisztségviselővel, a fentie
                                                             <constraint firstAttribute="height" constant="1" id="ggh-Sn-uN9"/>
                                                         </constraints>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yp-8B-Sfd" customClass="RoundedWhiteButton" customModule="FirebaseApp" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yp-8B-Sfd" customClass="RoundedWhiteButton" customModule="EventApp" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="284" width="255" height="64"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -1222,6 +1267,7 @@ Bármikor kapcsolatba léphet az adatvédelmi tisztségviselővel, a fentie
                         <outlet property="emailLabel" destination="gyW-DD-vAH" id="e4K-o4-UcJ"/>
                         <outlet property="loginButton" destination="7yp-8B-Sfd" id="058-Kr-Fpo"/>
                         <outlet property="passwordLabel" destination="83w-cf-n6f" id="SBh-jm-ynH"/>
+                        <segue destination="h1K-gq-ZzX" kind="show" identifier="homeSegue" id="jao-ac-6ad"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vSh-O8-REz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1265,7 +1311,7 @@ Bármikor kapcsolatba léphet az adatvédelmi tisztségviselővel, a fentie
                                                         <rect key="frame" x="12" y="85" width="279" height="22"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="username"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" textContentType="username"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jn4-N6-Kv1">
                                                         <rect key="frame" x="12" y="111" width="279" height="1"/>
@@ -1280,7 +1326,7 @@ Bármikor kapcsolatba léphet az adatvédelmi tisztségviselővel, a fentie
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wzf-sA-DcN">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wzf-sA-DcN">
                                                         <rect key="frame" x="12" y="157" width="279" height="22"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -1303,7 +1349,7 @@ Bármikor kapcsolatba léphet az adatvédelmi tisztségviselővel, a fentie
                                                         <rect key="frame" x="12" y="223" width="279" height="22"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES" textContentType="password"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES" textContentType="new-password"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPL-CR-1RO">
                                                         <rect key="frame" x="12" y="249" width="279" height="1"/>
@@ -1312,7 +1358,7 @@ Bármikor kapcsolatba léphet az adatvédelmi tisztségviselővel, a fentie
                                                             <constraint firstAttribute="height" constant="1" id="WIv-S8-aqF"/>
                                                         </constraints>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZvI-wG-K96" customClass="RoundedWhiteButton" customModule="FirebaseApp" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZvI-wG-K96" customClass="RoundedWhiteButton" customModule="EventApp" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="286" width="255" height="64"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -1322,6 +1368,9 @@ Bármikor kapcsolatba léphet az adatvédelmi tisztségviselővel, a fentie
                                                         <state key="normal" title="Regisztráció">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="signUpTapped:" destination="WpS-aO-lZY" eventType="touchUpInside" id="zte-Sa-vZx"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1398,12 +1447,12 @@ Bármikor kapcsolatba léphet az adatvédelmi tisztségviselővel, a fentie
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qzn-sj-6x6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-762" y="2848"/>
+            <point key="canvasLocation" x="-1218" y="3247"/>
         </scene>
         <!--Login Navi View Controller-->
         <scene sceneID="fk4-qF-9yW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IeA-7P-C3f" customClass="LoginNaviViewController" customModule="EventApp" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="loginNaviVC" automaticallyAdjustsScrollViewInsets="NO" id="IeA-7P-C3f" customClass="LoginNaviViewController" customModule="EventApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="b7G-T1-iZF">
@@ -1427,12 +1476,14 @@ Bármikor kapcsolatba léphet az adatvédelmi tisztségviselővel, a fentie
         <image name="chat" width="50" height="50"/>
         <image name="hawaiiResort" width="1280" height="720"/>
         <image name="home" width="50" height="50"/>
+        <image name="kekimage" width="253.91999816894531" height="73.919998168945312"/>
+        <image name="kekimageford" width="253.91999816894531" height="73.919998168945312"/>
         <image name="locc" width="50" height="50"/>
         <image name="tihanyiapatsag" width="1440" height="810"/>
         <image name="whiteinfo" width="510.72000122070312" height="512.6400146484375"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XJG-cv-MvX"/>
-        <segue reference="0MM-s0-LIg"/>
+        <segue reference="jao-ac-6ad"/>
+        <segue reference="czx-kb-qt1"/>
     </inferredMetricsTieBreakers>
 </document>

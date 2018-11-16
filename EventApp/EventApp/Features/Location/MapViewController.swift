@@ -47,7 +47,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
         // show artwork on map
         let artwork = Artwork(title: "Vihari Réka",
-                              locationName: "Waikiki Gateway Park",
+                              locationName: "Keszthely",
                               discipline: "Sculpture",
                               coordinate: CLLocationCoordinate2D(latitude: 46.761517, longitude: 17.2534798))
         mapView.addAnnotation(artwork)

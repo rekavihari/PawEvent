@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ContactViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 
-    let nameValues = ["Tóth Csaba Gergő","Marjai Zsolt","Zele Bence"]
-    let phoneValues = ["06 30 645 86 68","06 20 985 37 56","06 70 345 26 35"]
-    let emailValues = ["tcsg.toth@gmail.com","info@bikemylake.hu","zele.bence@gmail.com"]
+    var nameValues:[String] = ["uj","vmi"]
+    var phoneValues:[String] = ["kk","ff"]
+    var emailValues:[String] = ["jj","gg"]
 
     @IBAction func callTapped(_ sender: Any) {
         let phoneNumber = 0036302571405
@@ -40,6 +42,7 @@ class ContactViewController: UIViewController, UITableViewDelegate, UITableViewD
         let bounds = cell.bounds
         maskLayer.path = UIBezierPath(roundedRect: CGRect(x: 6, y: 6, width: bounds.width-9, height: bounds.height-9), cornerRadius: 10).cgPath
         cell.layer.mask = maskLayer
+
 
        
 
@@ -78,7 +81,37 @@ class ContactViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.performSegue(withIdentifier: segueIdentifier, sender: self)
 
     }*/
+    func Getdata() {
 
+        let urlstring = URL(string:"http://localhost:8080/api/events")
+
+        guard let url = urlstring else {
+            return
+        }
+        let parameters: Parameters = [
+            "username": UserDefaults.standard.getUsername(),
+            "password": UserDefaults.standard.getPassword()]
+        let headers: HTTPHeaders = ["Authorization":UserDefaults.standard.getToken()]
+
+        Alamofire.request("http://localhost:8080/api/events").responseJSON(completionHandler: { (response) in
+
+            switch response.result {
+            case .success(let value):
+                if let value = response.result.value {
+                    print(response)
+                    let json = JSON(value)
+                    print(json.arrayValue[0]["name"].stringValue)
+
+                }
+
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    )}
+
+
+    
 
 
 
@@ -86,6 +119,8 @@ class ContactViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationController?.isNavigationBarHidden = false
+        Getdata()
 
 
     }

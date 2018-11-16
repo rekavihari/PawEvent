@@ -7,12 +7,21 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftKeychainWrapper
 
-class LoginScreenViewController: UIViewController {
+struct Auth: Decodable {
+    let id_token: String
+
+}
+
+class LoginScreenViewController: UIViewController, ErrorHandlerViewController {
 
     @IBOutlet weak var emailLabel: UITextField!
     @IBOutlet weak var passwordLabel: UITextField!
     @IBOutlet weak var loginButton: RoundedWhiteButton!
+
+    var token: String = "accestoken"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +29,7 @@ class LoginScreenViewController: UIViewController {
 
         let preferences = UserDefaults.standard
         if(preferences.object(forKey: "sessions") != nil) {
-            LoginDone()
+            isLoggedIn()
         } else {
             LoginToDo()
         }
@@ -48,65 +57,97 @@ class LoginScreenViewController: UIViewController {
     }
 
     func DoLogin(_ user: String, _ psw:String) {
+
         let urlstring = URL(string:"http://localhost:8080/api/authenticate")
-        let session = URLSession.shared
 
         guard let url = urlstring else {
             return
         }
-        let request = NSMutableURLRequest(url: url)
-        request.httpMethod = "POST"
+        let parameters: Parameters = [
+            "username": user,
+            "password": psw,
+        ]
+        var headers: HTTPHeaders = ["Authorization":"Bearer token"]
 
-        let paramToSend = ["username":user,"password":psw]
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = try! JSONSerialization.data(withJSONObject: paramToSend)
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+            if response.result.isFailure {
+                print("fail")
+                print(response)
 
-        let task = session.dataTask(with: request as URLRequest, completionHandler: {
-            (data, response, error) in
+            }else {
 
-            guard let _:Data = data else {
-                return
-            }
+                let jsonData = response.data
+                let decoder = JSONDecoder()
 
-            let json:Any?
-
-            do {
-                json = try JSONSerialization.jsonObject(with: data!, options: [])
-            } catch { return }
-
-            guard let server_response = json as? NSDictionary else {
-                return
-            }
-
-            if let data_block = server_response["data"] as? NSDictionary {
-                if let session_data = data_block["sessions"] as? String {
-                    let preferences = UserDefaults.standard
-                    preferences.set(session_data, forKey: "session")
-
-                    DispatchQueue.main.async (
-                        execute:self.LoginDone
-                    )
+                guard let jsonString = jsonData else {
+                    return
                 }
-            }
+                do {
 
-        })
-        task.resume()
+                    let auth = try decoder.decode(Auth.self, from: jsonString)
+                print("Bearer \(auth.id_token)")
+                headers = ["Authorization":"Bearer \(auth.id_token)"]
+                self.token=auth.id_token
+
+                var urlRequest = URLRequest(url: url)
+                urlRequest.httpMethod = HTTPMethod.get.rawValue
+
+                headers.updateValue("Bearer \(auth.id_token)", forKey: "Authorization")
+                urlRequest.setValue("Bearer \(auth.id_token)", forHTTPHeaderField: "Authorization")
+
+                UserDefaults.standard.setUsername(value: user)
+                UserDefaults.standard.setPassword(value: psw)
+                UserDefaults.standard.setToken(value: "Bearer \(auth.id_token)")
+                        self.finishLoggingin()
+                } catch {
+                    print("nem sikerült a bejelentkezés")
+                    self.showAlert(title: "Sikertelen bejelentkezés", message: "Rossz felhasználónév vagy jelszó!")
+                }
+
+                if self.isLoggedIn() {
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let controller = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
+                    self.present(controller, animated: true, completion: nil)
+
+
+                }
+                else {
+                    print("nem sikerült a bejelentkezés")
+                    self.showAlert(title: "Sikertelen bejelentkezés", message: "Rossz felhasználónév vagy jelszó!")
+                }
+
+            }
+        }
 
     }
 
-    func LoginToDo() {
+    func LoginToDo()  {
         emailLabel.isEnabled = true
         passwordLabel.isEnabled = true
 
-        loginButton.setTitle("Login", for: .normal)
+        loginButton.setTitle("Bejelentkezés", for: .normal)
     }
 
-    func LoginDone() {
-        emailLabel.isEnabled = false
-        passwordLabel.isEnabled = false
+    func isLoggedIn() -> Bool {
 
-    loginButton.setTitle("Logout", for: .normal)
 
+        
+        return UserDefaults.standard.isLoggedIn()
+
+    }
+
+    func finishLoggingin() {
+        UserDefaults.standard.setisLoggedIn(value: true)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
+        if textField == emailLabel {
+            passwordLabel.becomeFirstResponder()
+        } else if textField == passwordLabel {
+            textField.resignFirstResponder()
+        }
+        return true
     }
     
 
@@ -119,7 +160,8 @@ class LoginScreenViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         // Hide the Navigation Bar
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
+
 
 }

@@ -20,12 +20,12 @@ class ProgramViewController: UIViewController, UICollectionViewDelegate, UIColle
 
     let timeValues = ["08:30 - 09:30", "10:00", "10:10", "11:30 - 12:30", "13:00 - 13:30", "15:00 - 16:00", "16:00 - 20:00", "20:00 - 21:00","21:00 - 22:00" ]
     let indexes = ["1","2","3","4","5","6","7","8","9"]
-    let imageValues = [UIImage(named: "tihanyiapatsag"), UIImage(named: "tihanyiapatsag"), UIImage(named: "tihanyiapatsag"), UIImage(named: "tihanyiapatsag"), UIImage(named: "tihanyiapatsag"), UIImage(named: "tihanyiapatsag"), UIImage(named: "tihanyiapatsag"), UIImage(named: "tihanyiapatsag"), UIImage(named: "tihanyiapatsag")]
+    let imageValues = [UIImage(named: "continentalbreakfast"), UIImage(named: "tihanyiapatsag"), UIImage(named: "tihanyiapatsag"), UIImage(named: "tihanyiapatsag"), UIImage(named: "tihanyiapatsag"), UIImage(named: "tihanyiapatsag"), UIImage(named: "tihanyiapatsag"), UIImage(named: "tihanyiapatsag"), UIImage(named: "tihanyiapatsag")]
     let addressNames = ["Mandel Kemping - 8229 Paloznak, Görbe utca 5.", "Mandel Kemping - 8229 Paloznak, Görbe utca 5.", "Guruljon az élet-Csopak, 0219/4, 8229", "8237 Tihany, András tér 1", "Nagyi Kertje Teázó-8241 Aszófő, Remete u. 2", "Zánkai Erzsébet-Tábor - 8251 Zánka, Külterület hrsz. 030/1", "Zánkai Erzsébet-Tábor - 8251 Zánka, Külterület hrsz. 030/1", "Zánkai Erzsébet-Tábor - 8251 Zánka, Külterület hrsz. 030/1", "Zánkai Erzsébet-Tábor - 8251 Zánka, Külterület hrsz. 030/15"]
-    let descriptionValues = ["Közös reggeli - kontinentális menü", "Az első kilométerek megtétele", "Guruljon az élet", "Feltekerés a Tihanyi apátsághoz, amely a domb tetején található","Nagyi Kertje Teázó","Szállások elfoglalása","Lángos, röpi, vizibicikli, sör, fröccs, stb","Grillezés (csirkemell, kolbászok, zöldségek)","Fergeteges hangulattal és remek társasággal"]
-    let titleValues = ["Reggeli", "Indulás Paloznakról", "Sportfröccs", "Tihanyi templomdomb", "Sörözés Aszófőn","Érkezés Zánkára","Strand","Vacsora","Kvízest"]
+    let descriptionValues = ["Közös reggeli - kontinentális menü", "Feltekerés a Tihanyi apátsághoz", "Guruljon az élet", "Feltekerés a Tihanyi apátsághoz, amely a domb tetején található","Nagyi Kertje Teázó","Szállások elfoglalása","Lángos, röpi, vizibicikli, sör, fröccs, stb","Grillezés (csirkemell, kolbászok, zöldségek)","Fergeteges hangulattal és remek társasággal"]
+    let titleValues = ["Reggeli", "Tihanyi templomdomb", "Sportfröccs", "Tihanyi templomdomb", "Sörözés Aszófőn","Érkezés Zánkára","Strand","Vacsora","Kvízest"]
 
-    let descriptionValuesUj = ["kkkkk reggeli - kontinentális menü", "Az első kilométerek megtétele", "Guruljon az élet", "Feltekerés a Tihanyi apátsághoz, amely a domb tetején található","Nagyi Kertje Teázó","Szállások elfoglalása","Lángos, röpi, vizibicikli, sör, fröccs, stb","Grillezés (csirkemell, kolbászok, zöldségek)","Fergeteges hangulattal és remek társasággal"]
+    let descriptionValuesUj = ["Közös reggeli - kontinentális menü", "Feltekerés a Tihanyi apátsághoz", "Guruljon az élet", "Feltekerés a Tihanyi apátsághoz, amely a domb tetején található","Nagyi Kertje Teázó","Szállások elfoglalása","Lángos, röpi, vizibicikli, sör, fröccs, stb","Grillezés (csirkemell, kolbászok, zöldségek)","Fergeteges hangulattal és remek társasággal"]
 
     fileprivate lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -61,6 +61,7 @@ class ProgramViewController: UIViewController, UICollectionViewDelegate, UIColle
         // For UITest
         self.dayView.accessibilityIdentifier = "calendar"
 
+        self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Ma", style: .done, target: self, action: #selector(addTapped))
 
 

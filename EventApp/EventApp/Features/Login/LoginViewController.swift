@@ -20,15 +20,6 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var signupButton: RoundedWhiteButton!
 
-   /* @IBAction func loginTapped(_ sender: Any) {
-
-        let mainTabController = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
-
-        mainTabController.selectedViewController = mainTabController.viewControllers?[0]
-
-        present(mainTabController, animated: true, completion: nil)
-    }*/
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         // Show the Navigation Bar
