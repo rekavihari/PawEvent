@@ -15,34 +15,10 @@ struct Event: Decodable {
     let description: String?
     let addressDescription: String?
     let iconURL: String?
-    let startDate: Date?
-    let endDate: Date?
+    let startDate: String?
+    let endDate: String?
     let backgroundImageURL: String?
-    let competitionID: Int?
-
-    init(id: Int? = nil,
-         name: String? = nil,
-         description: String? = nil,
-         addressDescription: String? = nil,
-         iconURL: String? = nil,
-         startDate: Date? = nil,
-         endDate: Date? = nil,
-         backgroundImageURL: String? = nil,
-         geoID: Geo? = nil,
-         competitionID: Int? = nil) {
-
-        self.id = id
-        self.name = name
-        self.description = description
-        self.addressDescription = addressDescription
-        self.iconURL = iconURL
-        self.startDate = startDate
-        self.endDate = endDate
-        self.backgroundImageURL = backgroundImageURL
-        self.competitionID = competitionID
-    }
-
-
+    let competition: String?
 }
 
 

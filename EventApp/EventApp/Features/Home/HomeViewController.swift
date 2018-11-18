@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var startLabel: UILabel!
     @IBOutlet weak var endLabel: UILabel!
 
-    var event: Event = Event(id: 1)
+//    var event: Event = Event(id: 1)
 
 
     override func viewDidLoad() {
@@ -34,7 +34,16 @@ class HomeViewController: UIViewController {
         navigationBarAppearace.tintColor = .black
 
 
-        Getdata()
+        // Downloading
+        let downloaderService = DownloaderService.shared
+
+        downloaderService.getPrograms(completion: { programs in
+            print()
+        })
+
+        downloaderService.getEvents(completion: { events in
+            print(events)
+        })
     }
 
     @IBAction func logoutTapped(_ sender: Any) {

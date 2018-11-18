@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92156B5621A1C6F200B25F69 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92156B5521A1C6F200B25F69 /* NetworkService.swift */; };
+		92156B5821A1CDCC00B25F69 /* DownloaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92156B5721A1CDCC00B25F69 /* DownloaderService.swift */; };
 		923F75A0219AE3A50097BE23 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923F759F219AE3A50097BE23 /* UserDefaults.swift */; };
 		923F75A2219AF55D0097BE23 /* ErrorHandlerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923F75A1219AF55D0097BE23 /* ErrorHandlerViewController.swift */; };
 		923F75A4219B7D990097BE23 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923F75A3219B7D980097BE23 /* String.swift */; };
@@ -67,6 +69,8 @@
 /* Begin PBXFileReference section */
 		0A9106AFD0D7214B79B32A9F /* Pods_EventApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45D86376E4C9F555E9F7AC63 /* Pods-EventApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventApp/Pods-EventApp.release.xcconfig"; sourceTree = "<group>"; };
+		92156B5521A1C6F200B25F69 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		92156B5721A1CDCC00B25F69 /* DownloaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloaderService.swift; sourceTree = "<group>"; };
 		923F759F219AE3A50097BE23 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		923F75A1219AF55D0097BE23 /* ErrorHandlerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlerViewController.swift; sourceTree = "<group>"; };
 		923F75A3219B7D980097BE23 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -139,6 +143,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		92156B5421A1C6E100B25F69 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				92156B5521A1C6F200B25F69 /* NetworkService.swift */,
+				92156B5721A1CDCC00B25F69 /* DownloaderService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		923B70D8219430EB0061F471 /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +307,7 @@
 		927308BB216647E6001F4DC6 /* EventApp */ = {
 			isa = PBXGroup;
 			children = (
+				92156B5421A1C6E100B25F69 /* Services */,
 				927308CB216647E9001F4DC6 /* Info.plist */,
 				923B70E0219432F10061F471 /* Resources */,
 				923B70DF219432C70061F471 /* Application */,
@@ -531,9 +545,11 @@
 				925F9E0221943C34004E15F7 /* Competition.swift in Sources */,
 				925F9DFE21943B18004E15F7 /* Host.swift in Sources */,
 				927308E221666CD9001F4DC6 /* DaysViewController.swift in Sources */,
+				92156B5821A1CDCC00B25F69 /* DownloaderService.swift in Sources */,
 				925F9E102194CA76004E15F7 /* LoginScreenViewController.swift in Sources */,
 				927308E621666D2F001F4DC6 /* ProgramCollectionViewCell.swift in Sources */,
 				927308DE21666C9C001F4DC6 /* MessageViewController.swift in Sources */,
+				92156B5621A1C6F200B25F69 /* NetworkService.swift in Sources */,
 				928513F0216CB15500812F4B /* EventsViewController.swift in Sources */,
 				92F3414E21669B9800B486F2 /* mm.swift in Sources */,
 				92C9E30B2184DE14006642D6 /* Settings+UserDefaults.swift in Sources */,
