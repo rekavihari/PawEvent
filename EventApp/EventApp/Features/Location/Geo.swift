@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Geo {
+struct Geo: Decodable{
     let id: Int
     let latitude: Double
     let longitude: Double

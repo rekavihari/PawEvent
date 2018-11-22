@@ -9,6 +9,104 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Message View Controller-->
+        <scene sceneID="Wpo-6I-kqK">
+            <objects>
+                <viewController id="GGu-Qm-8V2" customClass="MessageViewController" customModule="EventApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r2h-qK-Lx6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zTa-d6-2bJ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="129" id="yBx-Dh-2Mv" customClass="MessageTableViewCell" customModule="EventApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="129"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yBx-Dh-2Mv" id="aZ4-aa-dOA">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="128.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="UBD-TZ-oTl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="128.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dátum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfH-Hw-36o">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="23"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Név" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9a-oX-aCW">
+                                                            <rect key="frame" x="0.0" y="50" width="375" height="22.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Üzenet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vht-qc-hjL">
+                                                            <rect key="frame" x="0.0" y="99.5" width="375" height="29"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="UBD-TZ-oTl" secondAttribute="trailing" id="4vU-bb-9VE"/>
+                                                <constraint firstItem="UBD-TZ-oTl" firstAttribute="leading" secondItem="aZ4-aa-dOA" secondAttribute="leading" id="DFR-2o-6Si"/>
+                                                <constraint firstAttribute="bottom" secondItem="UBD-TZ-oTl" secondAttribute="bottom" id="T5I-oS-JCI"/>
+                                                <constraint firstItem="UBD-TZ-oTl" firstAttribute="top" secondItem="aZ4-aa-dOA" secondAttribute="top" id="ds0-Df-9do"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageLabel" destination="Vht-qc-hjL" id="Kn2-sc-dsN"/>
+                                            <outlet property="nameLabel" destination="g9a-oX-aCW" id="fdH-GY-Ddh"/>
+                                            <outlet property="timeLabel" destination="cfH-Hw-36o" id="nQw-O2-Z1B"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="169" translatesAutoresizingMaskIntoConstraints="NO" id="Iez-RT-Wzf">
+                                <rect key="frame" x="0.0" y="568" width="375" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Üzenet" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hbi-ks-IT0">
+                                        <rect key="frame" x="0.0" y="0.0" width="89.5" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="g33-Of-q7L"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0O-EY-uWh">
+                                        <rect key="frame" x="258.5" y="0.0" width="116.5" height="50"/>
+                                        <state key="normal" title="Küldés"/>
+                                        <connections>
+                                            <action selector="sendTapped:" destination="GGu-Qm-8V2" eventType="touchUpInside" id="Qdu-1S-9PZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Iez-RT-Wzf" firstAttribute="leading" secondItem="nTc-Dj-edD" secondAttribute="leading" id="Dat-Pw-0Ya"/>
+                            <constraint firstItem="zTa-d6-2bJ" firstAttribute="leading" secondItem="r2h-qK-Lx6" secondAttribute="leading" id="Dtv-AA-7UF"/>
+                            <constraint firstItem="Iez-RT-Wzf" firstAttribute="top" secondItem="zTa-d6-2bJ" secondAttribute="bottom" id="dyH-c8-RXt"/>
+                            <constraint firstItem="zTa-d6-2bJ" firstAttribute="top" secondItem="nTc-Dj-edD" secondAttribute="top" id="j67-cI-K7S"/>
+                            <constraint firstAttribute="trailing" secondItem="zTa-d6-2bJ" secondAttribute="trailing" id="oOj-Mf-CO4"/>
+                            <constraint firstItem="nTc-Dj-edD" firstAttribute="bottom" secondItem="Iez-RT-Wzf" secondAttribute="bottom" id="rQk-ca-xgL"/>
+                            <constraint firstItem="nTc-Dj-edD" firstAttribute="trailing" secondItem="Iez-RT-Wzf" secondAttribute="trailing" id="zqx-QZ-qMO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nTc-Dj-edD"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5vl-xh-wj6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ScM-AE-VST" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1216.8" y="6713.7931034482763"/>
+        </scene>
         <!--Üzenetek-->
         <scene sceneID="l5d-SY-XE7">
             <objects>
@@ -264,32 +362,32 @@
                                 <rect key="frame" x="10" y="74" width="355" height="544"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35T-pG-geN">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="101"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="21"/>
                                         <string key="text">A túra során mindenkinek lehetősége lesz egy átfogó pontgyűjtő versenyben való részvételre. Az összesített ranglista első három helyezettjét értékes ajándékokkal jutamazzuk.                      </string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eredményhirdetés:    " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOf-iU-VNQ">
-                                        <rect key="frame" x="0.0" y="111" width="355" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="31" width="355" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keszthely, 2018. július 28. 21:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n09-gm-FCJ">
-                                        <rect key="frame" x="0.0" y="141.5" width="355" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="62" width="355" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pontszerzési lehetőségek:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8Z-0E-k4h">
-                                        <rect key="frame" x="0.0" y="172" width="355" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="92.5" width="355" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3TC-Vo-hhe">
-                                        <rect key="frame" x="0.0" y="202.5" width="355" height="341.5"/>
+                                        <rect key="frame" x="0.0" y="123.5" width="355" height="420.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gb5-Yi-B5e">
@@ -975,7 +1073,7 @@ Bármikor kapcsolatba léphet az adatvédelmi tisztségviselővel, a fentie
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="4qF-X6-IKC" kind="relationship" relationship="rootViewController" id="cni-6w-0ws"/>
+                        <segue destination="GGu-Qm-8V2" kind="relationship" relationship="rootViewController" id="ycG-F5-KvE"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nC4-Kp-94f" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1483,7 +1581,7 @@ Bármikor kapcsolatba léphet az adatvédelmi tisztségviselővel, a fentie
         <image name="whiteinfo" width="510.72000122070312" height="512.6400146484375"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jao-ac-6ad"/>
+        <segue reference="XJG-cv-MvX"/>
         <segue reference="czx-kb-qt1"/>
     </inferredMetricsTieBreakers>
 </document>

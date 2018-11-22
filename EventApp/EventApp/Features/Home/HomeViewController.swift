@@ -9,17 +9,19 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import CoreLocation
+import MapKit
 
 
-
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var startLabel: UILabel!
     @IBOutlet weak var endLabel: UILabel!
+    let locationManager = CLLocationManager()
 
 //    var event: Event = Event(id: 1)
+    var event = [Event]()
 
 
     override func viewDidLoad() {
@@ -36,23 +38,54 @@ class HomeViewController: UIViewController {
 
         // Downloading
         let downloaderService = DownloaderService.shared
-
-        downloaderService.getPrograms(completion: { programs in
-            print()
-        })
-
         downloaderService.getEvents(completion: { events in
+            self.event.append(contentsOf: events)
             print(events)
+            self.setUpView()
         })
+
+
+
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
+        guard let sourceCord = locationManager.location?.coordinate, CLLocationCoordinate2DIsValid(sourceCord) else{
+            print("Forrás koordináta üres!")
+            return
+        }
+        let latiSource = sourceCord.latitude
+        let longiSource = sourceCord.longitude
+        UserDefaults.standard.setLatitude(value: latiSource)
+        UserDefaults.standard.setLongitude(value: longiSource)
+
+        let locdownloaderService = DownloaderService.shared
+
+        locdownloaderService.addLocation(completion: { geos in
+            print(geos)
+        })
+
+
+
+      
     }
 
     @IBAction func logoutTapped(_ sender: Any) {
         handleSignOut()
     }
 
+    func setUpView() {
+        nameLabel.text = event[0].name
+        startLabel.text = event[0].startDate
+        endLabel.text = event[0].endDate
+    }
 
 
-    func Getdata() {
+   /* func Getdata() {
 
         let urlstring = URL(string:"http://localhost:8080/api/events")
 
@@ -81,7 +114,22 @@ class HomeViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
-    }
+    }*/
+
+   /* func startReceivingSignificantLocationChanges() {
+        let authorizationStatus = CLLocationManager.authorizationStatus()
+        if authorizationStatus != .authorizedAlways {
+            // User has not authorized access to location information.
+            return
+        }
+
+        if !CLLocationManager.significantLocationChangeMonitoringAvailable() {
+            // The service is not available.
+            return
+        }
+        locationManager.delegate = self
+        locationManager.startMonitoringSignificantLocationChanges()
+    }*/
 
     func handleSignOut() {
         UserDefaults.standard.setisLoggedIn(value: false)

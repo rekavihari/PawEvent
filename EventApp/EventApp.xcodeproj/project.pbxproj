@@ -62,7 +62,6 @@
 		92C9E30B2184DE14006642D6 /* Settings+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C9E30A2184DE14006642D6 /* Settings+UserDefaults.swift */; };
 		92C9E30D2184DF1F006642D6 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C9E30C2184DF1F006642D6 /* UIColor+Extensions.swift */; };
 		92C9E30F2184DF48006642D6 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C9E30E2184DF48006642D6 /* UIViewController+Extensions.swift */; };
-		92DF055821A6D46400080390 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DF055721A6D46400080390 /* MessageViewController.swift */; };
 		92F3414E21669B9800B486F2 /* mm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F3414D21669B9800B486F2 /* mm.swift */; };
 		F5E1FC8FE723A11D10BE562A /* Pods_EventApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A9106AFD0D7214B79B32A9F /* Pods_EventApp.framework */; };
 /* End PBXBuildFile section */
@@ -127,7 +126,6 @@
 		92C9E30A2184DE14006642D6 /* Settings+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings+UserDefaults.swift"; sourceTree = "<group>"; };
 		92C9E30C2184DF1F006642D6 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		92C9E30E2184DF48006642D6 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		92DF055721A6D46400080390 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MessageViewController.swift; path = ../Location/MessageViewController.swift; sourceTree = "<group>"; };
 		92F3414D21669B9800B486F2 /* mm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mm.swift; sourceTree = "<group>"; };
 		DE09B1162131CD145F5662E1 /* Pods-EventApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventApp/Pods-EventApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,7 +170,6 @@
 		923B70D9219430F50061F471 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
-				92DF055721A6D46400080390 /* MessageViewController.swift */,
 				92C9E2F82184DC7A006642D6 /* ChatViewController.swift */,
 				924B66842184D96500701E02 /* MessageKitViewController.swift */,
 				927308DD21666C9C001F4DC6 /* MessageViewController.swift */,
@@ -551,7 +548,6 @@
 				92156B5821A1CDCC00B25F69 /* DownloaderService.swift in Sources */,
 				925F9E102194CA76004E15F7 /* LoginScreenViewController.swift in Sources */,
 				927308E621666D2F001F4DC6 /* ProgramCollectionViewCell.swift in Sources */,
-				92DF055821A6D46400080390 /* MessageViewController.swift in Sources */,
 				927308DE21666C9C001F4DC6 /* MessageViewController.swift in Sources */,
 				92156B5621A1C6F200B25F69 /* NetworkService.swift in Sources */,
 				928513F0216CB15500812F4B /* EventsViewController.swift in Sources */,

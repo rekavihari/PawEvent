@@ -4,6 +4,8 @@ import Alamofire
 enum Endpoints: String {
     case events = "events"
     case program = "programs"
+    case location = "geos"
+    case message = "messages"
 }
 
 typealias ResponseType = ((Data?, Error?) -> Void)?
@@ -11,11 +13,20 @@ typealias ResponseType = ((Data?, Error?) -> Void)?
 class NetworkService {
 
     static let shared = NetworkService()
+    
 
     private let baseUrl = URL(string:"http://localhost:8080/api/")
     private let parameters: Parameters = [
+        "username": UserDefaults.standard.getUsername()
+        ]
+
+    private let parametersLoc: Parameters = [
         "username": UserDefaults.standard.getUsername(),
-        "password": UserDefaults.standard.getPassword()]
+        "longitude": UserDefaults.standard.getLongitude(),
+        "latitude": UserDefaults.standard.getLatitude(),
+    ]
+
+
     private let headers: HTTPHeaders = ["Authorization":UserDefaults.standard.getToken()]
 
     // Singleton, tehat nem lehet belole tobbet letrehozni, ezert privat az init
@@ -46,6 +57,17 @@ class NetworkService {
 //            case .failure(let error):
 //                print(error.localizedDescription)
 //            }
+        }
+    }
+
+    func post(endpoint: Endpoints, completion: ResponseType) {
+        guard let baseUrl = baseUrl, let url = URL(string: "\(baseUrl)\(endpoint.rawValue)") else { return }
+        Alamofire.request(url, method: .post, parameters: parametersLoc, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+
+            if let data = response.data {
+                completion?(data, nil)
+            }
+
         }
     }
 }

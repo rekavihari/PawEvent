@@ -17,6 +17,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     let locationManager = CLLocationManager()
     var tappedLoc = CLLocationCoordinate2D()
+    var currLocation : CLLocationCoordinate2D?
 
 
 
@@ -104,6 +105,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             print("Forrás koordináta üres!")
             return
         }
+        let latiSource = sourceCord.latitude
+        let longiSource = sourceCord.longitude
+        UserDefaults.standard.setLatitude(value: latiSource)
+        UserDefaults.standard.setLongitude(value: longiSource)
+        let locdownloaderService = DownloaderService.shared
+
+        locdownloaderService.addLocation(completion: { geos in
+            print(geos)
+        })
+
 
         let destCord = CLLocationCoordinate2D (latitude: 46.7580642, longitude: 17.253708)
 

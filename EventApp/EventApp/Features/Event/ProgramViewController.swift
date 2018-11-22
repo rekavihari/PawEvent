@@ -8,14 +8,20 @@
 
 import UIKit
 import FSCalendar
+import Alamofire
+import SwiftyJSON
 
 class ProgramViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, FSCalendarDataSource, FSCalendarDelegate, UIGestureRecognizerDelegate {
+
 
     @IBOutlet weak var collectionView: UICollectionView!
 
     @IBOutlet weak var dayView: FSCalendar!
 
     @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
+
+    var program = [Program]()
+    var count:Int = 0
 
 
     let timeValues = ["08:30 - 09:30", "10:00", "10:10", "11:30 - 12:30", "13:00 - 13:30", "15:00 - 16:00", "16:00 - 20:00", "20:00 - 21:00","21:00 - 22:00" ]
@@ -63,6 +69,22 @@ class ProgramViewController: UIViewController, UICollectionViewDelegate, UIColle
 
         self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Ma", style: .done, target: self, action: #selector(addTapped))
+
+        // Downloading
+        let downloaderService = DownloaderService.shared
+
+        downloaderService.getPrograms(completion: { programs in
+            print(programs)
+            self.program.append(contentsOf: programs)
+
+        })
+
+        downloadProgram()
+        
+
+    }
+
+    func downloadProgram() {
 
 
     }
@@ -117,7 +139,15 @@ class ProgramViewController: UIViewController, UICollectionViewDelegate, UIColle
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return titleValues.count
+
+        
+        let downloaderService = DownloaderService.shared
+
+        downloaderService.getPrograms(completion: { programs in
+            self.count = programs.count})
+        return 4
+
+
     }
 
 
@@ -136,20 +166,53 @@ class ProgramViewController: UIViewController, UICollectionViewDelegate, UIColle
         let userCalendar = Calendar.current // user calendar
         let someDateTime = userCalendar.date(from: dateComponents)
 
-        guard let compareDate = someDateTime else {
+      /*  guard let compareDate = someDateTime else {
             return cell
         }
         if dateNow.compare(compareDate).rawValue == 0 {
-            cell.descriptionLabel.text = descriptionValues[indexPath.row]
+            //cell.descriptionLabel.text = descriptionValues[indexPath.row]
             print("ok")
         } else {
-            cell.descriptionLabel.text = descriptionValuesUj[indexPath.row]
+            //cell.descriptionLabel.text = descriptionValuesUj[indexPath.row]
             print("nemok")
-        }
+        }*/
 
+        let downloaderService = DownloaderService.shared
+
+        downloaderService.getPrograms(completion: { programs in
+            print(programs)
+            self.program.append(contentsOf: programs)
+            self.count = programs.count
+
+
+
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd"
+            guard let compareDate = self.program[indexPath.row].date else {
+                return
+            }
+            let someDateTime = formatter.date(from: compareDate)
+
+            guard let compDate = someDateTime else { return }
+            if dateNow.compare(compDate).rawValue == 0 {
+                //cell.descriptionLabel.text = descriptionValues[indexPath.row]
+                cell.titleLabel.text = self.program[indexPath.row].name
+                cell.timeLabel.text = self.program[indexPath.row].startTime
+                cell.descriptionLabel.text = self.program[indexPath.row].description
+                print("ok")
+            } else {
+                //cell.descriptionLabel.text = descriptionValuesUj[indexPath.row]
+                print("nemok")
+                cell.titleLabel.text = "nincs esemény"
+                cell.timeLabel.text = ""
+                cell.descriptionLabel.text = "a mai napon nincs esemény"
+            }
+
+
+        })
         cell.imageURL.image = imageValues[indexPath.row]
-        cell.titleLabel.text = titleValues[indexPath.row]
-        cell.timeLabel.text = timeValues[indexPath.row]
+        //cell.titleLabel.text = titleValues[indexPath.row]
+
 
         //This creates the shadows and modifies the cards a little bit
         cell.contentView.layer.cornerRadius = 4.0

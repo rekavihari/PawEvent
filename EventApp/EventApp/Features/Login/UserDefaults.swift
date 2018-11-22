@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 extension UserDefaults {
     enum UserDefaultsKey: String {
@@ -14,7 +15,11 @@ extension UserDefaults {
         case username
         case password
         case accestoken
+        case latitude
+        case longitude
     }
+
+
 
     func setisLoggedIn(value: Bool) {
         set(value, forKey: UserDefaultsKey.isLoggedIn.rawValue)
@@ -51,7 +56,26 @@ extension UserDefaults {
     }
 
     func getToken() -> String {
-        guard let token = UserDefaults.standard.string(forKey: "accestoken") else { return "Nincs token"}
+        guard let token = UserDefaults.standard.string(forKey: "accestoken") else { return ""}
         return token
+    }
+
+    func setLatitude(value: Double) {
+        set(value, forKey: UserDefaultsKey.latitude.rawValue)
+        synchronize()
+    }
+
+  func getLatitude() -> Double {
+    return double(forKey: UserDefaultsKey.latitude.rawValue)
+
+    }
+
+    func setLongitude(value: Double) {
+        set(value, forKey: UserDefaultsKey.longitude.rawValue)
+        synchronize()
+    }
+
+    func getLongitude() -> Double {
+        return double(forKey: UserDefaultsKey.longitude.rawValue)
     }
 }

@@ -16,7 +16,19 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     let messageValues = ["Mikor lesz vacsi?","Hamarosan","Rendben, várjuk","Vacsora változás","Alapanyagok hiányában változtattuk a vacsorán. Köszönjük megértéseteket, babgulyás lesz."]
     let idValues = ["0213","34345","1234","435435","56"]
 
+   
+    @IBAction func sendTapped(_ sender: Any) {
+        // Downloading
+        let downloaderService = DownloaderService.shared
 
+
+
+        downloaderService.getEvents(completion: { events in
+
+            print(events)
+        })
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "messagecell") as! MessageTableViewCell

@@ -18,9 +18,6 @@ class DownloaderService {
         let networkService = NetworkService.shared
         networkService.get(endpoint: .events, completion: { response, error in
 
-            if let error = error {
-                // hibakezeles
-            } else {
                 var events: [Event]
                 if let response = response {
                     do {
@@ -29,7 +26,7 @@ class DownloaderService {
                     } catch {
                         print("A dekodolas sikertelen volt.")
                     }
-                }
+                
             }
 
         })
@@ -38,7 +35,57 @@ class DownloaderService {
     func getPrograms(completion: (([Program]) -> Void)?) {
         let networkService = NetworkService.shared
         networkService.get(endpoint: .program, completion: { response, error in
-            print("")
+
+                var programs: [Program]
+                if let response = response {
+                    do {
+                        programs = try JSONDecoder().decode([Program].self, from: response)
+                        completion?(programs)
+                    } catch {
+                        print("A dekodolas sikertelen volt.")
+                    }
+                
+            }
+
+        })
+    }
+
+    func addLocation(completion: (([Geo]) -> Void)?) {
+        let networkService = NetworkService.shared
+        networkService.post(endpoint: .location, completion: { response, error in
+
+
+                var locations: [Geo]
+                if let response = response {
+                    do {
+                        locations = try JSONDecoder().decode([Geo].self, from: response)
+                        completion?(locations)
+                    } catch {
+                        print("A dekodolas sikertelen volt.")
+                    }
+                
+            }
+
+        })
+    }
+    func addMessage(completion: (([Geo]) -> Void)?) {
+        let networkService = NetworkService.shared
+        networkService.post(endpoint: .location, completion: { response, error in
+
+            if let error = error {
+                // hibakezeles
+            } else {
+                var locations: [Geo]
+                if let response = response {
+                    do {
+                        locations = try JSONDecoder().decode([Geo].self, from: response)
+                        completion?(locations)
+                    } catch {
+                        print("A dekodolas sikertelen volt.")
+                    }
+                }
+            }
+
         })
     }
 }

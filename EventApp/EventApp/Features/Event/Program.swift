@@ -9,15 +9,15 @@
 import Foundation
 import UIKit
 
-struct Program {
-    let id: Int
-    let name: String
-    let decsription: String
-    let imageURL: String
-    let date: Date
-    let startTime: Date
-    let endTime: Date
-    let eventID: Int
-    let geoID: Int
-    let dayID: Int
+struct Program: Decodable {
+    let id: Int?
+    let name: String?
+    let description: String?
+    let imageURL: String?
+    let date: String?
+    let startTime: String?
+    let endTime: String?
+    let eventID: Int?
+    let geoID: Int?
+    let dayID: Int?
 }
