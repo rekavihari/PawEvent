@@ -24,6 +24,7 @@ class NetworkService {
         "username": UserDefaults.standard.getUsername(),
         "longitude": UserDefaults.standard.getLongitude(),
         "latitude": UserDefaults.standard.getLatitude(),
+        "name": UserDefaults.standard.getUsername(),
     ]
 
 
