@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 import CoreLocation
 import MapKit
+import Kingfisher
 
 
 class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
@@ -18,10 +19,10 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var startLabel: UILabel!
     @IBOutlet weak var endLabel: UILabel!
-    let locationManager = CLLocationManager()
+    @IBOutlet weak var iconImage: UIImageView!
 
-//    var event: Event = Event(id: 1)
     var event = [Event]()
+    let locationManager = CLLocationManager()
 
 
     override func viewDidLoad() {
@@ -82,6 +83,11 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         nameLabel.text = event[0].name
         startLabel.text = event[0].startDate
         endLabel.text = event[0].endDate
+        guard let iconString = event[0].iconURL else { return }
+        guard let url = URL(string: iconString) else { return }
+        iconImage.kf.setImage(with: url)
+
+    
     }
 
 

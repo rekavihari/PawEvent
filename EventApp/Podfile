@@ -13,6 +13,7 @@ target 'EventApp' do
   pod 'FSCalendar'
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'Kingfisher'
   pod 'SwiftKeychainWrapper'
 
 end

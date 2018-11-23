@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MessageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -18,15 +19,9 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
 
    
     @IBAction func sendTapped(_ sender: Any) {
-        // Downloading
-        let downloaderService = DownloaderService.shared
 
+       
 
-
-        downloaderService.getEvents(completion: { events in
-
-            print(events)
-        })
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

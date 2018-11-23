@@ -762,6 +762,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="endLabel" destination="CHV-sv-54r" id="5by-Ge-LaN"/>
+                        <outlet property="iconImage" destination="1vF-gx-uV6" id="pNC-Wp-6Dg"/>
                         <outlet property="nameLabel" destination="T5i-OJ-zff" id="8mv-Ez-XaW"/>
                         <outlet property="startLabel" destination="p39-mB-1k7" id="955-aK-jeh"/>
                     </connections>

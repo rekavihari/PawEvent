@@ -73,7 +73,7 @@ class LoginScreenViewController: UIViewController, ErrorHandlerViewController {
             if response.result.isFailure {
                 print("fail")
                 print(response)
-
+                
             }else {
 
                 let jsonData = response.data
@@ -83,17 +83,10 @@ class LoginScreenViewController: UIViewController, ErrorHandlerViewController {
                     return
                 }
                 do {
-
-                    let auth = try decoder.decode(Auth.self, from: jsonString)
-                print("Bearer \(auth.id_token)")
-                headers = ["Authorization":"Bearer \(auth.id_token)"]
+                let auth = try decoder.decode(Auth.self, from: jsonString)
                 self.token=auth.id_token
 
-                var urlRequest = URLRequest(url: url)
-                urlRequest.httpMethod = HTTPMethod.get.rawValue
-
                 headers.updateValue("Bearer \(auth.id_token)", forKey: "Authorization")
-                urlRequest.setValue("Bearer \(auth.id_token)", forHTTPHeaderField: "Authorization")
 
                 UserDefaults.standard.setUsername(value: user)
                 UserDefaults.standard.setPassword(value: psw)
@@ -103,13 +96,10 @@ class LoginScreenViewController: UIViewController, ErrorHandlerViewController {
                     print("nem sikerült a bejelentkezés")
                     self.showAlert(title: "Sikertelen bejelentkezés", message: "Rossz felhasználónév vagy jelszó!")
                 }
-
                 if self.isLoggedIn() {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let controller = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
                     self.present(controller, animated: true, completion: nil)
-
-
                 }
                 else {
                     print("nem sikerült a bejelentkezés")

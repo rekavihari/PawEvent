@@ -26,9 +26,7 @@ class DownloaderService {
                     } catch {
                         print("A dekodolas sikertelen volt.")
                     }
-                
             }
-
         })
     }
 
@@ -54,7 +52,6 @@ class DownloaderService {
         let networkService = NetworkService.shared
         networkService.post(endpoint: .location, completion: { response, error in
 
-
                 var locations: [Geo]
                 if let response = response {
                     do {
@@ -63,9 +60,7 @@ class DownloaderService {
                     } catch {
                         print("A dekodolas sikertelen volt.")
                     }
-                
             }
-
         })
     }
     func addMessage(completion: (([Geo]) -> Void)?) {

@@ -13,7 +13,6 @@ typealias ResponseType = ((Data?, Error?) -> Void)?
 class NetworkService {
 
     static let shared = NetworkService()
-    
 
     private let baseUrl = URL(string:"http://localhost:8080/api/")
     private let parameters: Parameters = [
@@ -26,7 +25,6 @@ class NetworkService {
         "latitude": UserDefaults.standard.getLatitude(),
         "name": UserDefaults.standard.getUsername(),
     ]
-
 
     private let headers: HTTPHeaders = ["Authorization":UserDefaults.standard.getToken()]
 
@@ -43,21 +41,6 @@ class NetworkService {
             } else if let data = response.data {
                 completion?(data, nil)
             }
-
-//            switch response.result {
-//            case .success(let value):
-//                if let value = response.result.value {
-//                    print(response)
-//                    let json = JSON(value)
-//                    print(json.arrayValue[0]["name"].stringValue)
-//                    self.nameLabel.text = json.arrayValue[0]["name"].stringValue
-//                    self.startLabel.text = json.arrayValue[0]["startDate"].stringValue
-//                    self.endLabel.text = json.arrayValue[0]["endDate"].stringValue
-//                }
-//
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
         }
     }
 
