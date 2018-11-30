@@ -9,10 +9,8 @@
 import Foundation
 import UIKit
 
-struct Message {
-    let id: String
-    let date: String
-    let text: String
-    let event: Event
-    let sender: User
+struct Message: Decodable {
+    let id: String?
+    let date: String?
+    let text: String?
 }

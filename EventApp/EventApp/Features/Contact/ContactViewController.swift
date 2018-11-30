@@ -13,9 +13,9 @@ import SwiftyJSON
 class ContactViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 
-    var nameValues:[String] = ["uj","vmi"]
-    var phoneValues:[String] = ["kk","ff"]
-    var emailValues:[String] = ["jj","gg"]
+    var nameValues:[String] = ["Tóth Csaba","Marjai Zsolt","Zele Bence"]
+    var phoneValues:[String] = ["06305374536","06207468999","06308763948"]
+    var emailValues:[String] = ["tcsg.toth@gmail.com","marjai.zsolt@gmail.com","zele.bence@gmail.com"]
 
     @IBAction func callTapped(_ sender: Any) {
         let phoneNumber = 0036302571405
@@ -120,7 +120,7 @@ class ContactViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
 
         self.navigationController?.isNavigationBarHidden = false
-        Getdata()
+       // Getdata()
 
 
     }

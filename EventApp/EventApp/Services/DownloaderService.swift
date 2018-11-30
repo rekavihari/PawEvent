@@ -48,6 +48,24 @@ class DownloaderService {
         })
     }
 
+    func getMessages(completion: (([Message]) -> Void)?) {
+        let networkService = NetworkService.shared
+        networkService.get(endpoint: .message, completion: { response, error in
+
+            var programs: [Message]
+            if let response = response {
+                do {
+                    programs = try JSONDecoder().decode([Message].self, from: response)
+                    completion?(programs)
+                } catch {
+                    print("A dekodolas sikertelen volt.")
+                }
+
+            }
+
+        })
+    }
+
     func addLocation(completion: (([Geo]) -> Void)?) {
         let networkService = NetworkService.shared
         networkService.post(endpoint: .location, completion: { response, error in
@@ -63,18 +81,18 @@ class DownloaderService {
             }
         })
     }
-    func addMessage(completion: (([Geo]) -> Void)?) {
+    func addMessage(completion: (([Message]) -> Void)?) {
         let networkService = NetworkService.shared
         networkService.post(endpoint: .location, completion: { response, error in
 
             if let error = error {
                 // hibakezeles
             } else {
-                var locations: [Geo]
+                var msg: [Message]
                 if let response = response {
                     do {
-                        locations = try JSONDecoder().decode([Geo].self, from: response)
-                        completion?(locations)
+                        msg = try JSONDecoder().decode([Message].self, from: response)
+                        completion?(msg)
                     } catch {
                         print("A dekodolas sikertelen volt.")
                     }
