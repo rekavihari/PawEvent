@@ -14,7 +14,7 @@ class NetworkService {
 
     static let shared = NetworkService()
 
-    private let baseUrl = URL(string:"http://localhost:8080/api/")
+    private let baseUrl = URL(string:"http://192.168.0.24:8080/api/")
     private let parameters: Parameters = [
         "username": UserDefaults.standard.getUsername()
         ]
@@ -33,12 +33,9 @@ class NetworkService {
 
     func get(endpoint: Endpoints, completion: ResponseType) {
         guard let baseUrl = baseUrl, let url = URL(string: "\(baseUrl)\(endpoint.rawValue)") else { return }
-        Alamofire.request(url, method: .get, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
 
-            // Ha hiba van a lekerdezesben
-            if response.response?.statusCode ?? 300 > 299 {
-                completion?(nil, response.error)
-            } else if let data = response.data {
+            if let data = response.data {
                 completion?(data, nil)
             }
         }
@@ -46,7 +43,7 @@ class NetworkService {
 
     func post(endpoint: Endpoints, completion: ResponseType) {
         guard let baseUrl = baseUrl, let url = URL(string: "\(baseUrl)\(endpoint.rawValue)") else { return }
-        Alamofire.request(url, method: .post, parameters: parametersLoc, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+        Alamofire.request(url, method: .post, parameters: parametersLoc, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
 
             if let data = response.data {
                 completion?(data, nil)

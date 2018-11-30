@@ -116,16 +116,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         })
 
 
-        let destCord = CLLocationCoordinate2D (latitude: 46.7580642, longitude: 17.253708)
-
-        let sourcePlaceMark = MKPlacemark (coordinate: sourceCord)
-        let destPlaceMark = MKPlacemark (coordinate: destCord)
-
-        let sourceItem = MKMapItem (placemark: sourcePlaceMark)
-        let destItem = MKMapItem (placemark: destPlaceMark)
-
         let directionRequest = MKDirections.Request()
-
+        let sourcePlaceMark = MKPlacemark (coordinate: sourceCord)
+        let sourceItem = MKMapItem (placemark: sourcePlaceMark)
         let destPM = MKPlacemark (coordinate: tappedLoc)
         let destITM = MKMapItem (placemark: destPM)
 
