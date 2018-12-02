@@ -47,6 +47,23 @@ class DownloaderService {
 
         })
     }
+    func getHosts(completion: (([Host]) -> Void)?) {
+        let networkService = NetworkService.shared
+        networkService.get(endpoint: .host, completion: { response, error in
+
+            var hosts: [Host]
+            if let response = response {
+                do {
+                    hosts = try JSONDecoder().decode([Host].self, from: response)
+                    completion?(hosts)
+                } catch {
+                    print("A dekodolas sikertelen volt.")
+                }
+
+            }
+
+        })
+    }
 
     func getMessages(completion: (([Message]) -> Void)?) {
         let networkService = NetworkService.shared

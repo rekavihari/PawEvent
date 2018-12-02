@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-struct Host {
-    let id: Int
-    let name: String
-    let iconURL: String
-    let phone: Int
-    let email: String
-    let eventID: Int
+struct Host: Decodable{
+    let id: Int?
+    let name: String?
+    let iconURL: String?
+    let phone: Int?
+    let email: String?
+    let eventID: Int?
 }

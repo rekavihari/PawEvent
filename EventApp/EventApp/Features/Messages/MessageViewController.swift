@@ -11,6 +11,7 @@ import Alamofire
 
 class MessageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var message = [Message]()
     let timeValues = ["09.18.17:00","09.18.17:30","09.18.18:00","09.18.19:00"]
     let nameValues = ["Tóth Csaba","Tóth Réka","Tóth Panni","Kovács József"]
     let messageValues = ["Mikor lesz vacsi?","Hamarosan","Rendben, várjuk","Vacsora változás: hamburger "]
@@ -22,6 +23,14 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
+        let downloaderService = DownloaderService.shared
+
+        downloaderService.getMessages(completion: { messages in
+            print(messages)
+            self.message.append(contentsOf: messages)
+           self.reloadInputViews()
+        })
 
 
     }
@@ -53,13 +62,11 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.layer.mask = maskLayer
 
         cell.nameLabel.text = nameValues[indexPath.row]
-        downloaderService.getMessages(completion: { messages in
-            print(messages)
 
-            cell.timeLabel.text = messages[indexPath.row].date
+        cell.timeLabel.text = message[indexPath.row].date
 
-            cell.messageLabel.text = messages[indexPath.row].text
-        })
+        cell.messageLabel.text = message[indexPath.row].text
+
 
         
        /* cell.timeLabel.text = timeValues[indexPath.row]
@@ -87,7 +94,13 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
 
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nameValues.count
+        let downloaderService = DownloaderService.shared
+
+        downloaderService.getMessages(completion: { messages in
+            self.message = messages
+            tableView.reloadData()
+        })
+        return message.count
     }
 
    

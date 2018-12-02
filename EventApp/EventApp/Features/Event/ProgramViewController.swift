@@ -75,7 +75,6 @@ class ProgramViewController: UIViewController, UICollectionViewDelegate, UIColle
 
         downloaderService.getPrograms(completion: { programs in
             print(programs)
-            self.program.append(contentsOf: programs)
             self.collectionView.reloadData()
         })
 
@@ -193,17 +192,15 @@ class ProgramViewController: UIViewController, UICollectionViewDelegate, UIColle
 
             guard let compDate = someDateTime else { return cell }
             if dateNow.compare(compDate).rawValue == 0 {
-                //cell.descriptionLabel.text = descriptionValues[indexPath.row]
+                cell.isHidden = false
                 cell.titleLabel.text = self.program[indexPath.row].name
                 cell.timeLabel.text = self.program[indexPath.row].startTime
                 cell.descriptionLabel.text = self.program[indexPath.row].description
                 print("ok")
+
             } else {
-                //cell.descriptionLabel.text = descriptionValuesUj[indexPath.row]
                 print("nemok")
-                cell.titleLabel.text = "nincs esemény"
-                cell.timeLabel.text = ""
-                cell.descriptionLabel.text = "a mai napon nincs esemény"
+                cell.isHidden = true
             }
 
 

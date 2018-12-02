@@ -6,6 +6,7 @@ enum Endpoints: String {
     case program = "programs"
     case location = "geos"
     case message = "messages"
+    case host = "hosts"
 }
 
 typealias ResponseType = ((Data?, Error?) -> Void)?

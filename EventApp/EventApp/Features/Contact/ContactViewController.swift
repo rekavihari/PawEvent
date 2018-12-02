@@ -13,19 +13,38 @@ import SwiftyJSON
 class ContactViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 
+    var host = [Host]()
+    var phone: Int = 0
+    var email: String = ""
+
     var nameValues:[String] = ["Tóth Csaba","Marjai Zsolt","Zele Bence"]
     var phoneValues:[String] = ["06305374536","06207468999","06308763948"]
     var emailValues:[String] = ["tcsg.toth@gmail.com","marjai.zsolt@gmail.com","zele.bence@gmail.com"]
 
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.navigationController?.isNavigationBarHidden = false
+
+        let downloaderService = DownloaderService.shared
+        downloaderService.getHosts(completion: { hosts in
+            print(hosts)
+            self.host.append(contentsOf: hosts)
+            self.reloadInputViews()
+        })
+
+    }
+    
     @IBAction func callTapped(_ sender: Any) {
-        let phoneNumber = 0036302571405
+        let phoneNumber = self.phone
         if let url = URL(string: "tel://\(phoneNumber)") {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
     
     @IBAction func emailTapped(_ sender: Any) {
-        let email = "info@bikemylake.hu"
+        let email = self.email
         if let url = URL(string: "mailto:\(email)") {
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(url)
@@ -43,12 +62,17 @@ class ContactViewController: UIViewController, UITableViewDelegate, UITableViewD
         maskLayer.path = UIBezierPath(roundedRect: CGRect(x: 6, y: 6, width: bounds.width-9, height: bounds.height-9), cornerRadius: 10).cgPath
         cell.layer.mask = maskLayer
 
+        cell.nameLabel.text = host[indexPath.row].name
+        cell.emailLabel.setTitle(host[indexPath.row].email,for: .normal)
+        guard let emailString = host[indexPath.row].email else {return cell}
+        self.email = emailString
+        guard let phoneInt = host[indexPath.row].phone else {return cell}
+        let x : Int = phoneInt
+        let myString = String(x)
 
-       
+        cell.phoneLabel.setTitle(myString,for: .normal)
+        self.phone = phoneInt
 
-        cell.nameLabel.text = nameValues[indexPath.row]
-        cell.phoneLabel.setTitle(phoneValues[indexPath.row],for: .normal)
-        cell.emailLabel.setTitle(emailValues[indexPath.row],for: .normal)
 
         /*let viewHeight: CGFloat = view.frame.size.height
          let tableViewContentHeight: CGFloat = tableView.contentSize.height
@@ -65,7 +89,13 @@ class ContactViewController: UIViewController, UITableViewDelegate, UITableViewD
 
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nameValues.count
+        let downloaderService = DownloaderService.shared
+
+        downloaderService.getHosts(completion: { hosts in
+            self.host = hosts
+            tableView.reloadData()
+        })
+        return host.count
     }
 
     /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -81,49 +111,13 @@ class ContactViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.performSegue(withIdentifier: segueIdentifier, sender: self)
 
     }*/
-    func Getdata() {
-
-        let urlstring = URL(string:"http://localhost:8080/api/events")
-
-        guard let url = urlstring else {
-            return
-        }
-        let parameters: Parameters = [
-            "username": UserDefaults.standard.getUsername(),
-            "password": UserDefaults.standard.getPassword()]
-        let headers: HTTPHeaders = ["Authorization":UserDefaults.standard.getToken()]
-
-        Alamofire.request("http://localhost:8080/api/events").responseJSON(completionHandler: { (response) in
-
-            switch response.result {
-            case .success(let value):
-                if let value = response.result.value {
-                    print(response)
-                    let json = JSON(value)
-                    print(json.arrayValue[0]["name"].stringValue)
-
-                }
-
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    )}
-
 
     
 
 
 
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        self.navigationController?.isNavigationBarHidden = false
-       // Getdata()
-
-
-    }
 
 
 
