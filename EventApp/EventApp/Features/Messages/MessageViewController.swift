@@ -11,16 +11,35 @@ import Alamofire
 
 class MessageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-
     let timeValues = ["09.18.17:00","09.18.17:30","09.18.18:00","09.18.19:00"]
     let nameValues = ["Tóth Csaba","Tóth Réka","Tóth Panni","Kovács József"]
     let messageValues = ["Mikor lesz vacsi?","Hamarosan","Rendben, várjuk","Vacsora változás: hamburger "]
     let idValues = ["0213","34345","1234","435435"]
 
-   
+    @IBOutlet weak var textMessage: UITextField!
+    let downloaderService = DownloaderService.shared
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+
+
+    }
+
     @IBAction func sendTapped(_ sender: Any) {
 
-       
+        guard let message = textMessage.text else { return }
+
+        let date = Date()
+        let formatter = DateFormatter()
+
+        formatter.dateFormat = "yyyy.MM.dd"
+
+        let dateString: String = formatter.string(from: date)
+
+        downloaderService.addMessage(text: message, date: dateString, completion: {
+
+        })
 
     }
     
@@ -33,8 +52,6 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         maskLayer.path = UIBezierPath(roundedRect: CGRect(x: 6, y: 6, width: bounds.width-9, height: bounds.height-9), cornerRadius: 10).cgPath
         cell.layer.mask = maskLayer
 
-
-        let downloaderService = DownloaderService.shared
         cell.nameLabel.text = nameValues[indexPath.row]
         downloaderService.getMessages(completion: { messages in
             print(messages)
@@ -74,12 +91,7 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
    
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-
-
-    }
 
    
 

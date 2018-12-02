@@ -68,7 +68,15 @@ class DownloaderService {
 
     func addLocation(completion: (([Geo]) -> Void)?) {
         let networkService = NetworkService.shared
-        networkService.post(endpoint: .location, completion: { response, error in
+
+        let parametersLoc: [String: Any] = [
+            "username": UserDefaults.standard.getUsername(),
+            "longitude": UserDefaults.standard.getLongitude(),
+            "latitude": UserDefaults.standard.getLatitude(),
+            "name": UserDefaults.standard.getUsername(),
+        ]
+
+        networkService.post(endpoint: .location, parameters: parametersLoc, completion: { response, error in
 
                 var locations: [Geo]
                 if let response = response {
@@ -81,9 +89,19 @@ class DownloaderService {
             }
         })
     }
-    func addMessage(completion: (([Message]) -> Void)?) {
+
+    func addMessage(text: String, date: String, completion: (() -> Void)?) {
         let networkService = NetworkService.shared
-        networkService.post(endpoint: .location, completion: { response, error in
+
+        let message: [String: Any] = [
+//            "user": [
+//                "login": "admin"
+//            ],
+            "date": date,
+            "text": text
+        ]
+
+        networkService.post(endpoint: .message, parameters: message, completion: { response, error in
 
             if let error = error {
                 // hibakezeles
@@ -92,7 +110,7 @@ class DownloaderService {
                 if let response = response {
                     do {
                         msg = try JSONDecoder().decode([Message].self, from: response)
-                        completion?(msg)
+                        completion?()
                     } catch {
                         print("A dekodolas sikertelen volt.")
                     }

@@ -76,7 +76,7 @@ class ProgramViewController: UIViewController, UICollectionViewDelegate, UIColle
         downloaderService.getPrograms(completion: { programs in
             print(programs)
             self.program.append(contentsOf: programs)
-
+            self.collectionView.reloadData()
         })
 
         downloadProgram()
@@ -144,8 +144,11 @@ class ProgramViewController: UIViewController, UICollectionViewDelegate, UIColle
         let downloaderService = DownloaderService.shared
 
         downloaderService.getPrograms(completion: { programs in
-            self.count = programs.count})
-        return 4
+            self.count = programs.count
+            self.program = programs
+            collectionView.reloadData()
+        })
+        return program.count
 
 
     }
@@ -164,7 +167,7 @@ class ProgramViewController: UIViewController, UICollectionViewDelegate, UIColle
         dateComponents.month = 11
         dateComponents.day = 8
         let userCalendar = Calendar.current // user calendar
-        let someDateTime = userCalendar.date(from: dateComponents)
+       // let someDateTime = userCalendar.date(from: dateComponents)
 
       /*  guard let compareDate = someDateTime else {
             return cell
@@ -177,23 +180,18 @@ class ProgramViewController: UIViewController, UICollectionViewDelegate, UIColle
             print("nemok")
         }*/
 
-        let downloaderService = DownloaderService.shared
 
-        downloaderService.getPrograms(completion: { programs in
-            print(programs)
-            self.program.append(contentsOf: programs)
-            self.count = programs.count
 
 
 
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy/MM/dd"
             guard let compareDate = self.program[indexPath.row].date else {
-                return
+                return cell
             }
             let someDateTime = formatter.date(from: compareDate)
 
-            guard let compDate = someDateTime else { return }
+            guard let compDate = someDateTime else { return cell }
             if dateNow.compare(compDate).rawValue == 0 {
                 //cell.descriptionLabel.text = descriptionValues[indexPath.row]
                 cell.titleLabel.text = self.program[indexPath.row].name
@@ -209,7 +207,7 @@ class ProgramViewController: UIViewController, UICollectionViewDelegate, UIColle
             }
 
 
-        })
+
         cell.imageURL.image = imageValues[indexPath.row]
         //cell.titleLabel.text = titleValues[indexPath.row]
 

@@ -45,8 +45,6 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             self.setUpView()
         })
 
-
-
         locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
 

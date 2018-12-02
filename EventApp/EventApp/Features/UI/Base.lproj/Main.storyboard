@@ -1546,6 +1546,9 @@ Bármikor kapcsolatba léphet az adatvédelmi tisztségviselővel, a fentie
                                         <state key="normal" title="Küldés">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sendTapped:" destination="SCg-ES-0VS" eventType="touchUpInside" id="nXm-cS-tGY"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -1578,6 +1581,9 @@ Bármikor kapcsolatba léphet az adatvédelmi tisztségviselővel, a fentie
                         <viewLayoutGuide key="safeArea" id="bY0-7b-M7g"/>
                     </view>
                     <navigationItem key="navigationItem" title="Üzenetek" id="SVK-eX-nIJ"/>
+                    <connections>
+                        <outlet property="textMessage" destination="4SA-Xj-dRN" id="g9b-5S-utd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EQA-Cq-dXV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
