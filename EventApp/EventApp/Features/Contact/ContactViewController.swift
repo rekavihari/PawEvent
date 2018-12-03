@@ -62,7 +62,7 @@ class ContactViewController: UIViewController, UITableViewDelegate, UITableViewD
         maskLayer.path = UIBezierPath(roundedRect: CGRect(x: 6, y: 6, width: bounds.width-9, height: bounds.height-9), cornerRadius: 10).cgPath
         cell.layer.mask = maskLayer
 
-        cell.nameLabel.text = host[indexPath.row].name
+        /*cell.nameLabel.text = host[indexPath.row].name
         cell.emailLabel.setTitle(host[indexPath.row].email,for: .normal)
         guard let emailString = host[indexPath.row].email else {return cell}
         self.email = emailString
@@ -71,7 +71,10 @@ class ContactViewController: UIViewController, UITableViewDelegate, UITableViewD
         let myString = String(x)
 
         cell.phoneLabel.setTitle(myString,for: .normal)
-        self.phone = phoneInt
+        self.phone = phoneInt*/
+        cell.nameLabel.text = nameValues[indexPath.row]
+        cell.phoneLabel.setTitle(phoneValues[indexPath.row],for: .normal)
+        cell.emailLabel.setTitle(emailValues[indexPath.row], for: .normal)
 
 
         /*let viewHeight: CGFloat = view.frame.size.height
@@ -95,7 +98,7 @@ class ContactViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.host = hosts
             tableView.reloadData()
         })
-        return host.count
+        return 3
     }
 
     /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -116,7 +119,11 @@ class ContactViewController: UIViewController, UITableViewDelegate, UITableViewD
 
 
 
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let backItem = UIBarButtonItem()
+        backItem.title = "Vissza"
+        navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
+    }
 
 
 

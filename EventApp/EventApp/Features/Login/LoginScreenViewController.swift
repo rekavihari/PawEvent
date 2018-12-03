@@ -58,7 +58,7 @@ class LoginScreenViewController: UIViewController, ErrorHandlerViewController {
 
     func DoLogin(_ user: String, _ psw:String) {
 
-        let urlstring = URL(string:"http://192.168.1.104:8080/api/authenticate")
+        let urlstring = URL(string:"http://localhost:8080/api/authenticate")
 
         guard let url = urlstring else {
             return

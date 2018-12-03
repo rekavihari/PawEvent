@@ -15,7 +15,7 @@ class NetworkService {
 
     static let shared = NetworkService()
 
-    private let baseUrl = URL(string:"http://192.168.1.104:8080/api/")
+    private let baseUrl = URL(string:"http://localhost:8080/api/")
 
     private let parameters: Parameters = [
         "username": UserDefaults.standard.getUsername()

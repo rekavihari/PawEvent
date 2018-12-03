@@ -12,6 +12,7 @@
 		923F75A0219AE3A50097BE23 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923F759F219AE3A50097BE23 /* UserDefaults.swift */; };
 		923F75A2219AF55D0097BE23 /* ErrorHandlerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923F75A1219AF55D0097BE23 /* ErrorHandlerViewController.swift */; };
 		923F75A4219B7D990097BE23 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923F75A3219B7D980097BE23 /* String.swift */; };
+		9242D88B21B5E3EA00FE34AE /* GDPRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9242D88A21B5E3EA00FE34AE /* GDPRViewController.swift */; };
 		924B66852184D96500701E02 /* MessageKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924B66842184D96500701E02 /* MessageKitViewController.swift */; };
 		924F70E52196324000BD9B88 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924F70E42196324000BD9B88 /* UserService.swift */; };
 		924F70E7219634B200BD9B88 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924F70E6219634B200BD9B88 /* AuthenticationService.swift */; };
@@ -74,6 +75,7 @@
 		923F759F219AE3A50097BE23 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		923F75A1219AF55D0097BE23 /* ErrorHandlerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlerViewController.swift; sourceTree = "<group>"; };
 		923F75A3219B7D980097BE23 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		9242D88A21B5E3EA00FE34AE /* GDPRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDPRViewController.swift; sourceTree = "<group>"; };
 		924B66842184D96500701E02 /* MessageKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageKitViewController.swift; sourceTree = "<group>"; };
 		924F70E42196324000BD9B88 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		924F70E6219634B200BD9B88 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				92C9E2FA2184DCE1006642D6 /* Models */,
 				927308C3216647E6001F4DC6 /* EventApp.xcdatamodeld */,
 				923B70E4219433B50061F471 /* Declined */,
+				9242D88A21B5E3EA00FE34AE /* GDPRViewController.swift */,
 			);
 			path = EventApp;
 			sourceTree = "<group>";
@@ -497,7 +500,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\n\n";
+			shellScript = "
+
+";
 		};
 		946706DAC2761C23ED1FEE03 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -566,6 +571,7 @@
 				927308D82166654D001F4DC6 /* MapViewController.swift in Sources */,
 				92C9E30F2184DF48006642D6 /* UIViewController+Extensions.swift in Sources */,
 				923F75A4219B7D990097BE23 /* String.swift in Sources */,
+				9242D88B21B5E3EA00FE34AE /* GDPRViewController.swift in Sources */,
 				925F9E122194CDC5004E15F7 /* LoginNaviViewController.swift in Sources */,
 				927308D221664807001F4DC6 /* LoginViewController.swift in Sources */,
 				925F9E0021943BA4004E15F7 /* Program.swift in Sources */,
