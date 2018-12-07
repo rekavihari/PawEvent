@@ -16,18 +16,11 @@ class ProgramCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-   // @IBOutlet weak var indexString: UILabel!
-
-
-
 
     @IBAction func locationButtonTap(_ sender: Any) {
         let formatter = NumberFormatter()
         formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale?
-        //let latitude: CLLocationDegrees = formatter.number(from: latiLabel.text!)!.doubleValue
-
-
-        //let longitude: CLLocationDegrees = formatter.number(from: longiLabel.text!)!.doubleValue
+     
         let longitude: CLLocationDegrees = 17.708121
         let latitude: CLLocationDegrees = 46.882775
 

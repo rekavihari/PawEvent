@@ -23,7 +23,6 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
         let downloaderService = DownloaderService.shared
 
         downloaderService.getMessages(completion: { messages in
@@ -41,14 +40,11 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         let date = Date()
         let formatter = DateFormatter()
-
         formatter.dateFormat = "yyyy.MM.dd"
-
         let dateString: String = formatter.string(from: date)
-
         downloaderService.addMessage(text: message, date: dateString, completion: {
-
         })
+        textMessage.text=""
 
     }
     
@@ -62,15 +58,7 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.layer.mask = maskLayer
 
         cell.nameLabel.text = nameValues[indexPath.row]
-
-        cell.timeLabel.text = message[indexPath.row].date
-
-        cell.messageLabel.text = message[indexPath.row].text
-
-
-        
-       /* cell.timeLabel.text = timeValues[indexPath.row]
-
+        cell.timeLabel.text = timeValues[indexPath.row]
         cell.messageLabel.text = messageValues[indexPath.row]
 
         let id = 1234
@@ -80,18 +68,10 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.nameLabel.textAlignment = .right
             cell.messageLabel.textAlignment = .right
 
-        }*/
-
-        /*let viewHeight: CGFloat = view.frame.size.height
-         let tableViewContentHeight: CGFloat = tableView.contentSize.height
-         let marginHeight: CGFloat = (viewHeight - tableViewContentHeight) / 2.0 )-40
-
-         tableView.contentInset = UIEdgeInsets(top: marginHeight, left: 0, bottom:  -marginHeight, right: 0)*/
+        }
 
         return cell
     }
-
-
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let downloaderService = DownloaderService.shared
@@ -100,7 +80,7 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.message = messages
             tableView.reloadData()
         })
-        return message.count
+        return nameValues.count
     }
 
    

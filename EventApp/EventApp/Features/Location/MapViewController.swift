@@ -71,26 +71,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         let overlays = mapView.overlays
         mapView.removeOverlays(overlays)
     }
-    //memória csökk
-   /* override func viewWillDisappear(_ animated:Bool) {
-        super.viewWillDisappear(animated)
-        self.applyMapViewMemoryLeakFix()
-    }
-
-
-    func applyMapViewMemoryLeakFix() {
-        switch mapView.mapType {
-        case .standard, .mutedStandard:
-            mapView.mapType = .satellite
-        default:
-            mapView.mapType = .standard
-        }
-        mapView.showsUserLocation = false
-        mapView.delegate = nil
-        mapView.removeFromSuperview()
-        mapView = nil
-    }
- */
 
     func mapView (_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
@@ -179,8 +159,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                  calloutAccessoryControlTapped control: UIControl) {
         let location = view.annotation as! Artwork
         tappedLoc = location.coordinate
-        /*let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-        location.mapItem().openInMaps(launchOptions: launchOptions)*/
         paint()
     }
 
